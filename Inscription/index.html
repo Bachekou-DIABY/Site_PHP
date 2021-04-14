@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/ECF-Banque/bootstrap/bootstrap-4.4.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.CSS">
+  <link rel="stylesheet" href="/ECF-Banque/CSS/Template.css">
+
   <title>ECF Banque</title>
 </head>
 <body>
@@ -25,6 +27,40 @@
     </div>
   <div class="Content">
     <h1>Formulaire d'Inscription</h1>
+    <form method ="POST"action ="inscription.php">
+        <legend>Indiquez votre civilité</legend>
+        <label for="Mr">Monsieur</label>
+        <input type="radio" name="Civilité" id=Mr>
+
+        <label for="Mme">Madame</label>
+        <input type="radio" name="Civilité" id="Mme">
+
+        <label for="prenom">Indiquez votre prénom</label>
+        <input type="text" name="prenom" id="prenom" placeholder="Prenom" required>
+
+        <label for="nom">Indiquez votre nom de famille</label>
+        <input type="text" name="nom" id="nom" placeholder="Nom de famille"required>
+
+        <label for="birthdate">Indiquez votre date de naissance</label>
+        <input type="date" name="birthdate" id="birthdate" >
+
+        <label for="Adress">Indiquez votre adresse</label>
+        <input type="text" name="Adress" id="Adress" placeholder="75 rue du pont">
+
+        <label for="email"> Saisissez votre adresse email</label>
+        <input type="email" name="email" id="email" placeholder="jeandupont@gmail.com" required>
+        
+        <label for="password">Saisissez votre mot de passe</label>
+        <input type="password" name="password" id="password" placeholder="password" required>
+
+        <label for="callnumber">Indiquez votre numero de telephone</label>
+        <input type="tel" name="callnumber" id="callnumber" placeholder="0123456789">
+
+        <label for="city">Indiquez votre ville</label>
+        <input type="text" name="city" id="city" placeholder="Paris">
+
+        <label for="identity">Selectionnez une pièce d'identité</label>
+        <input type="file" name="identity" id="identity" required>
   </p>
   </div>
   <div class="Footer">

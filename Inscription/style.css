@@ -1,90 +1,50 @@
-
-.grid-container {
-  background-color: lightblue;
-  display: grid;
-  grid-template-columns: 1fr 2fr 3fr;
-  grid-template-rows: 1fr 2.5fr 0.46fr;
-  gap: 20px 0px;
-  grid-template-areas:
-    "logo subtitle navigation"
-    "Content Content Content"
-    "Footer Footer Footer";
+form {
+  max-width: 50%;
 }
 
-.logo {
-  grid-area: logo;
-  border-bottom: 1px solid;
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-img {
-  max-width: 100%;
+label.inline-label {
+  display: inline-block;
 }
 
-.navigation { 
-  grid-area: navigation; 
-  display: grid;
-  align-items: center;
-  border-bottom: 1px solid;
-
+fieldset {
+  border: 1px solid lightgray;
+  background-color: rgba(225, 233, 255, 0.25);
 }
 
-.subtitle { 
-  grid-area: subtitle; 
-  text-align: center;
-  align-items: center;
-  display: grid;
-  border-bottom: 1px solid;
+legend {
+  font-style: italic;
+  font-size: 1.1em;
+  padding: 5px;
 }
 
-.Content {
-  grid-area: Content;
-  display: grid;
-  text-align: center;
-
+form input, form select, form textarea {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 80%;
 }
 
-.Footer { 
-  grid-area: Footer; 
-  text-align: center;
-  border-top: 1px solid;
-  display: grid;
-  align-items: center;
+form input[type="radio"],
+form input[type="checkbox"],
+form input[type="submit"] {
+  width: auto;
 }
 
-/**
-header {
-  grid-area: header;
-  grid-column: 1 / 2;
-  grid-row: 1;
+button[type=submit] {
+  padding: 10px;
+  margin-top: 15px;
 }
 
-.subtitle{
-  font:arial ;
+.form-left{
+  align-items: left;
 }
 
-.navbar {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.form-right {
+  align-items:right ;
 }
-
-nav{
-grid-area: navigation;
-display: grid;
-align-items: center;
-}
-
-h1{
-text-align: center;
-}
-
-.content{
-grid-area: content;
-grid-row: 1;
-display: grid;
-}
-
-footer{
-grid-area: footer;
-display: inline-block;
-}**/

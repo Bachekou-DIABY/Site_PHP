@@ -1,56 +1,10 @@
-
-.grid-container {
-  background-color: lightblue;
-  display: grid;
-  grid-template-columns: 1fr 2fr 3fr;
-  grid-template-rows: 1fr 2.5fr 0.46fr;
-  gap: 20px 0px;
-  grid-template-areas:
-    "logo subtitle navigation"
-    "Content Content Content"
-    "Footer Footer Footer";
-}
-
-.logo {
-  grid-area: logo;
-  border-bottom: 1px solid;
-}
-
-img {
-  max-width: 100%;
-}
-
-.navigation { 
-  grid-area: navigation; 
-  display: grid;
-  align-items: center;
-  border-bottom: 1px solid;
-
-}
-
-.subtitle { 
-  grid-area: subtitle; 
-  text-align: center;
-  align-items: center;
-  display: grid;
-  border-bottom: 1px solid;
-}
-
 .Content {
   grid-area: Content;
   display: grid;
   text-align: center;
-
+  margin-top: 20px;
 }
 
-.Footer { 
-  grid-area: Footer; 
-  text-align: center;
-  border-top: 1px solid;
-  display: grid;
-  align-items: center;
-}
-
-.a{
-  color: white;
+p {
+  font-size:20px;
 }

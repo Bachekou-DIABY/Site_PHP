@@ -1,0 +1,54 @@
+.grid-container {
+  background-color: lightblue;
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr;
+  grid-template-rows: 20vh 70vh 10vh;
+  gap: 0px 0px;
+  grid-template-areas:
+    "logo subtitle navigation"
+    "Content Content Content"
+    "Footer Footer Footer";
+}
+
+.logo {
+  grid-area: logo;
+  border-bottom: 1px solid;
+}
+
+img {
+  max-width: 85%;
+}
+
+.navigation { 
+  grid-area: navigation; 
+  display: grid;
+  align-items: center;
+  border-bottom: 1px solid;
+
+}
+
+.subtitle { 
+  grid-area: subtitle; 
+  text-align: center;
+  align-items: center;
+  display: grid;
+  border-bottom: 1px solid;
+}
+
+a{
+  color:white;
+  text-decoration: none;
+}
+
+a:hover{
+  color:white;
+  text-decoration: none;
+}
+
+.Footer { 
+  grid-area: Footer; 
+  text-align: center;
+  border-top: 1px solid;
+  display: grid;
+  align-items: center;
+}
