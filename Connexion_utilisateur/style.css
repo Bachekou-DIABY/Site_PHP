@@ -1,0 +1,6 @@
+.Content {
+  grid-area: Content;
+  display: grid;
+  text-align: center;
+  margin-top: 20px;
+}

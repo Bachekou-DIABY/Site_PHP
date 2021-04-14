@@ -12,28 +12,20 @@
 </head>
 <body>
 <div class="grid-container">
-  <div class="logo">
-      <img src="/ECF-banque/coins-1726618_1920.jpg" class="block"/>
-  </div>
+  <div class="logo"></div>
   <div class="subtitle">
     <h1>Ma Banque en ligne</h1>
   </div>
   <div class="navigation">
       <ul class="navbar">
-        <li class= "btn btn-primary">
+        <li class= "btn btn-primary ">
           <a href="/ECF-banque/Accueil/index.html">Accueil</a>
         </li>
       </ul>
     </div>
   <div class="Content">
-    <h1>Formulaire d'Inscription</h1>
+    <h2 class="subtitle-position">Formulaire d'Inscription</h2>
     <form method ="POST"action ="inscription.php">
-        <legend>Indiquez votre civilité</legend>
-        <label for="Mr">Monsieur</label>
-        <input type="radio" name="Civilité" id=Mr>
-
-        <label for="Mme">Madame</label>
-        <input type="radio" name="Civilité" id="Mme">
 
         <label for="prenom">Indiquez votre prénom</label>
         <input type="text" name="prenom" id="prenom" placeholder="Prenom" required>
@@ -51,20 +43,17 @@
         <input type="email" name="email" id="email" placeholder="jeandupont@gmail.com" required>
         
         <label for="password">Saisissez votre mot de passe</label>
-        <input type="password" name="password" id="password" placeholder="password" required>
+        <input type="password" name="password" id="password" placeholder="Mot de passe" required>
 
-        <label for="callnumber">Indiquez votre numero de telephone</label>
-        <input type="tel" name="callnumber" id="callnumber" placeholder="0123456789">
-
-        <label for="city">Indiquez votre ville</label>
-        <input type="text" name="city" id="city" placeholder="Paris">
+        <label for="password">Confirmez votre mot de passe</label>
+        <input type="password" name="password" id="password" placeholder="Mot de passe" required>
 
         <label for="identity">Selectionnez une pièce d'identité</label>
         <input type="file" name="identity" id="identity" required>
   </p>
   </div>
   <div class="Footer">
-    <p><b>Tout droits reservés</b></p>
+    <p><b>Tous droits reservés</b></p>
   </div>
 </div>
 </body>

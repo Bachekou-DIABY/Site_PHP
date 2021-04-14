@@ -1,11 +1,19 @@
+.Content {
+  grid-area: Content;
+  display: grid;
+  overflow-y: auto;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
 form {
-  max-width: 50%;
+  max-width: 420px;
 }
 
 form label {
   display: block;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 label.inline-label {
@@ -23,11 +31,12 @@ legend {
   padding: 5px;
 }
 
-form input, form select, form textarea {
+.form-input[type="text"], form select, form textarea {
   display: inline-block;
   margin-bottom: 10px;
   padding: 10px;
   width: 80%;
+  height: 10px;
 }
 
 form input[type="radio"],
@@ -41,10 +50,6 @@ button[type=submit] {
   margin-top: 15px;
 }
 
-.form-left{
-  align-items: left;
-}
-
-.form-right {
-  align-items:right ;
+.subtitle-position{
+    padding-left:10px;
 }

@@ -13,10 +13,13 @@
 .logo {
   grid-area: logo;
   border-bottom: 1px solid;
+  max-height: 100%;
+  background: url(/ECF-banque/coins-1726618_1920.jpg) no-repeat;
+  background-size: contain;
 }
 
 img {
-  max-width: 85%;
+  max-width: 100%;
 }
 
 .navigation { 
@@ -52,3 +55,4 @@ a:hover{
   display: grid;
   align-items: center;
 }
+
