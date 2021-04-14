@@ -1,5 +1,5 @@
-.Content {
-  grid-area: Content;
+.content {
+  grid-area: content;
   display: grid;
   overflow-y: auto;
   margin-top: 20px;

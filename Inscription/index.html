@@ -23,15 +23,15 @@
         </li>
       </ul>
     </div>
-  <div class="Content">
+  <div class="content">
     <h2 class="subtitle-position">Formulaire d'Inscription</h2>
     <form method ="POST"action ="inscription.php">
 
-        <label for="prenom">Indiquez votre prénom</label>
-        <input type="text" name="prenom" id="prenom" placeholder="Prenom" required>
+        <label for="first_name">Indiquez votre prénom</label>
+        <input type="text" name="first_name" id="first_name" placeholder="Prenom" required>
 
-        <label for="nom">Indiquez votre nom de famille</label>
-        <input type="text" name="nom" id="nom" placeholder="Nom de famille"required>
+        <label for="last_name">Indiquez votre nom de famille</label>
+        <input type="text" name="last_name" id="last_name" placeholder="Nom de famille"required>
 
         <label for="birthdate">Indiquez votre date de naissance</label>
         <input type="date" name="birthdate" id="birthdate" >
@@ -50,9 +50,10 @@
 
         <label for="identity">Selectionnez une pièce d'identité</label>
         <input type="file" name="identity" id="identity" required>
-  </p>
+        <button type="submit">Valider l'inscription</button>
+    </form>
   </div>
-  <div class="Footer">
+  <div class="footer">
     <p><b>Tous droits reservés</b></p>
   </div>
 </div>

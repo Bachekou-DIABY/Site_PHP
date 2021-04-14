@@ -6,8 +6,8 @@
   gap: 0px 0px;
   grid-template-areas:
     "logo subtitle navigation"
-    "Content Content Content"
-    "Footer Footer Footer";
+    "content content content"
+    "footer footer footer";
 }
 
 .logo {
@@ -48,8 +48,8 @@ a:hover{
   text-decoration: none;
 }
 
-.Footer { 
-  grid-area: Footer; 
+.footer { 
+  grid-area: footer; 
   text-align: center;
   border-top: 1px solid;
   display: grid;
