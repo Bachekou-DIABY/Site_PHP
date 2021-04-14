@@ -1,0 +1,29 @@
+body {
+  display: grid;
+  grid-template-columns:20vw 30vw 1fr;
+  grid-template-rows:5vh 1fr 5vh;
+  grid-template-areas:
+  "Logo  subtitle  navigation"
+  "content content content"
+  "footer footer footer"
+}
+
+.subtitle{
+  font:arial ;
+}
+
+img {
+  max-width: 100%;
+}
+
+.navbar {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+nav{
+grid-area: navigation;
+display: grid;
+align-items: center;
+}
