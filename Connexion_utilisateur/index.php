@@ -25,11 +25,14 @@
   <div class="content">
     <h1>Connexion utilisateur</h1>
     <div>
-      <input type="text" name="email" id="email" placeholder="Adresse E-mail">
-      <input type="text" name="password" id="password" placeholder="Mot de passe">
-      <button class="btn btn-dark" type="submit">Connexion</button>
+    <form action="/ECF-Banque/User_connected/index.php" method="POST" >
+      <input type="email" name="email" id="email" placeholder="Adresse E-mail" required>
+      <input type="password" name="password" id="password" placeholder="Mot de passe" required>
+      <button class="btn btn-dark" type="submit" >Connexion</button>
+    </form>
     </div>
   </div>
+
   <div class="footer">
     <p><b>Tous droits reservés</b></p>
   </div>

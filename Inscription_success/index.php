@@ -18,10 +18,10 @@
   <div class="navigation">
       <ul class="navbar">
         <li class= "btn btn-secondary"> 
-          <a href="/ECF-banque/Connexion_utilisateur/index.html">Connexion</a> 
+          <a href="/ECF-banque/Connexion_utilisateur/index.php">Connexion</a> 
         </li>
         <li class= "btn btn-dark">
-          <a href="/ECF-banque/Connexion_admin/index.html">Connexion administrateur</a> 
+          <a href="/ECF-banque/Connexion_admin/index.php">Connexion administrateur</a> 
         </li>
         <li class= "btn btn-success">
           <a href="/ECF-banque/Inscription/index.php">Inscription</a> 
@@ -29,12 +29,12 @@
       </ul>
     </div>
     <?php
-  require_once 'db.php';
+  require_once 'C:/xampp/htdocs/ECF-Banque/Ressources/db.php';
   class MyDB extends SQLite3
   {
       public function __construct()
       {
-          $this->open('ECF-Banque.db');
+          $this->open('C:/xampp/htdocs/ECF-Banque/Ressources/ECF-Banque.db');
       }
   }
   $db = new MyDB();
@@ -45,7 +45,7 @@
   $adress = $_POST['adress'];
   $email = $_POST['email'];
   $password = $_POST['password'];
-  $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
+  $pass_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
   $req = $db->prepare('INSERT INTO user(last_name,first_name,birthdate,adress,email,password)
   VALUES(:last_name, :first_name, :birthdate, :adress, :email, :password)');
@@ -54,7 +54,7 @@
   $req->bindValue(':birthdate', $birthdate, SQLITE3_TEXT);
   $req->bindValue(':adress', $adress, SQLITE3_TEXT);
   $req->bindValue(':email', $email, SQLITE3_TEXT);
-  $req->bindValue(':password', $pass_hache, SQLITE3_TEXT);
+  $req->bindValue(':password', $pass_hash, SQLITE3_TEXT);
   $req->execute();
   ?>
   <div class="content">
