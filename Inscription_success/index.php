@@ -28,6 +28,35 @@
         </li>
       </ul>
     </div>
+    <?php
+  require_once 'db.php';
+  class MyDB extends SQLite3
+  {
+      public function __construct()
+      {
+          $this->open('ECF-Banque.db');
+      }
+  }
+  $db = new MyDB();
+
+  $last_name = $_POST['last_name'];
+  $first_name = $_POST['first_name'];
+  $birthdate = $_POST['birthdate'];
+  $adress = $_POST['adress'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+  $req = $db->prepare('INSERT INTO user(last_name,first_name,birthdate,adress,email,password)
+  VALUES(:last_name, :first_name, :birthdate, :adress, :email, :password)');
+  $req->bindValue(':last_name', $last_name, SQLITE3_TEXT);
+  $req->bindValue(':first_name', $first_name, SQLITE3_TEXT);
+  $req->bindValue(':birthdate', $birthdate, SQLITE3_TEXT);
+  $req->bindValue(':adress', $adress, SQLITE3_TEXT);
+  $req->bindValue(':email', $email, SQLITE3_TEXT);
+  $req->bindValue(':password', $pass_hache, SQLITE3_TEXT);
+  $req->execute();
+  ?>
   <div class="content">
     <p>Inscription réussie !<br>
     Veuillez retourner a la page d'accueil ou a la page de connexion

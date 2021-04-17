@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/ECF-Banque/bootstrap/bootstrap-4.4.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.CSS">
   <link rel="stylesheet" href="/ECF-Banque/CSS/Template.css">
+
 
   <title>ECF Banque</title>
 </head>
@@ -25,7 +26,7 @@
     </div>
   <div class="content">
     <h2 class="subtitle-position">Formulaire d'Inscription</h2>
-    <form method ="POST"action ="inscription.php">
+    <form method = "POST" action ="/ECF-banque/Inscription_success/index.php">
 
         <label for="first_name">Indiquez votre prénom</label>
         <input type="text" name="first_name" id="first_name" placeholder="Prenom" required>
@@ -36,8 +37,8 @@
         <label for="birthdate">Indiquez votre date de naissance</label>
         <input type="date" name="birthdate" id="birthdate" >
 
-        <label for="Adress">Indiquez votre adresse</label>
-        <input type="text" name="Adress" id="Adress" placeholder="75 rue du pont">
+        <label for="adress">Indiquez votre adresse</label>
+        <input type="text" name="adress" id="adress" placeholder="75 rue du pont">
 
         <label for="email"> Saisissez votre adresse email</label>
         <input type="email" name="email" id="email" placeholder="jeandupont@gmail.com" required>
