@@ -5,8 +5,8 @@
   </div>
   <div class="navigation">
       <ul class="navbar">
-        <li class= "btn btn-primary">
-          <a href="/ECF-banque/Accueil/index.html">Accueil</a>
+        <li class= "btn btn-danger">
+          <a href="/ECF-banque/User_disconnected/index.php">Deconnexion</a>
         </li>
       </ul>
     </div>
