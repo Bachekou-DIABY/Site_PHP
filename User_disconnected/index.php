@@ -23,16 +23,18 @@
       </ul>
     </div>
   <div class="content">
-    <h1>Connexion utilisateur</h1>
+    <h1>Vous avez bien été deconnecté</h1>
     <div>
-      <input type="text" name="email" id="email" placeholder="Adresse E-mail">
-      <input type="text" name="password" id="password" placeholder="Mot de passe">
-      <button class="btn btn-dark" type="submit">Connexion</button>
+    <a href="/ECF-banque/Accueil/index.html">Retourner a la page d'accueil</a>
     </div>
   </div>
   <div class="footer">
     <p><b>Tous droits reservés</b></p>
   </div>
+  <?php
+  session_start();
+  session_destroy();
+  ?>
 </div>
 </body>
 </html>

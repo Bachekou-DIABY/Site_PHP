@@ -24,7 +24,7 @@
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  $req = $db->prepare('SELECT * FROM user WHERE email = :email');
+  $req = $db->prepare('SELECT * FROM banker WHERE email = :email');
   $req->bindValue(':email', $email, SQLITE3_TEXT);
   $res = $req->execute()->fetchArray(SQLITE3_ASSOC);
 
@@ -38,19 +38,19 @@
           $_SESSION['email'] = $res['email'];
           $_SESSION['first_name'] = $res['first_name'];
           $_SESSION['last_name'] = $res['last_name'];
-          echo 'Vous êtes connecté !'; ?>
-        <div class="content">
-          <h1>Bienvenue sur votre page d'accueil</h1>
-          <div>
-            <p> Montant:</p>
-          </div>
-        </div>
-          <div class="footer">
-        <p><b>Tous droits reservés</b></p>
-        </div>
-      <?php
+          echo 'Vous êtes connecté !';
       } else {
           echo 'Mauvais mot de passe !';
       }
   }
-?>
+  ?>
+  <div class="content">
+    <h1>Bienvenue sur votre page d'accueil</h1>
+    <div>
+      <p> Montant : </p>
+    </div>
+  </div>
+  <div class="footer">
+    <p><b>Tous droits reservés</b></p>
+  </div>
+</div>

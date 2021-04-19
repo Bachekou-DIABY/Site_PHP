@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/ECF-Banque/bootstrap/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bootstrap/bootstrap-4.4.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.CSS">
-  <link rel="stylesheet" href="/ECF-Banque/CSS/Template.css">
+  <link rel="stylesheet" href="../CSS/Template.css">
 
   <title>ECF Banque</title>
 </head>
@@ -19,16 +19,18 @@
   <div class="navigation">
       <ul class="navbar">
         <li class= "btn btn-primary">
-          <a href="/ECF-banque/Accueil/index.html">Accueil</a>
+          <a href="../Accueil/index.html">Accueil</a>
         </li>
       </ul>
     </div>
   <div class="content">
     <h1>Connexion Administrateur</h1>
     <div>
-      <input type="text" name="adminID" id="adminID" placeholder="ID administrateur">
-      <input type="text" name="password" id="password" placeholder="Mot de passe">
-      <button class="btn btn-dark" type="submit">Connexion</button>
+    <form action="../Admin_connected/index.php" method="POST" >
+      <input type="email" name="email" id="email" placeholder="Adresse E-mail" required>
+      <input type="password" name="password" id="password" placeholder="Mot de passe" required>
+      <button class="btn btn-dark" type="submit" >Connexion</button>
+    </form>
     </div>
   </div>
   <div class="footer">

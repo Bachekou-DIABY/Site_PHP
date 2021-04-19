@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/ECF-Banque/bootstrap/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bootstrap/bootstrap-4.4.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.CSS">
-  <link rel="stylesheet" href="/ECF-Banque/CSS/Template.css">
+  <link rel="stylesheet" href="../CSS/Template.css">
 
 
   <title>ECF Banque</title>
@@ -20,13 +20,13 @@
   <div class="navigation">
       <ul class="navbar">
         <li class= "btn btn-primary ">
-          <a href="/ECF-banque/Accueil/index.html">Accueil</a>
+          <a href="../Accueil/index.html">Accueil</a>
         </li>
       </ul>
     </div>
   <div class="content">
     <h2 class="subtitle-position">Formulaire d'Inscription</h2>
-    <form method = "POST" action ="/ECF-banque/Inscription_success/index.php">
+    <form method = "POST" action ="../Inscription_success/index.php">
 
         <label for="first_name">Indiquez votre prénom</label>
         <input type="text" name="first_name" id="first_name" placeholder="Prenom" required>
