@@ -27,6 +27,8 @@
   $req = $db->prepare('SELECT * FROM banker WHERE email = :email');
   $req->bindValue(':email', $email, SQLITE3_TEXT);
   $res = $req->execute()->fetchArray(SQLITE3_ASSOC);
+  var_dump($_POST['password']);
+  var_dump($res['password']);
 
   if (!$res) {
       echo 'Mauvais identifiant !';
