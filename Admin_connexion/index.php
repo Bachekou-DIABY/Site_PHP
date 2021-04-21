@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="../bootstrap/bootstrap-4.4.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.CSS">
   <link rel="stylesheet" href="../CSS/Template.css">
-
   <title>ECF Banque</title>
 </head>
 <body>
@@ -24,15 +23,26 @@
       </ul>
     </div>
   <div class="content">
-    <h1>Connexion Administrateur</h1>
+    <h1>Connexion administrateur</h1>
     <div>
-    <form action="../Admin_connected/index.php" method="POST" >
+    <?php
+    if (array_key_exists('error', $_GET)) {
+        if ('password' == $_GET['error']) {
+            echo 'Mauvais mot de passe';
+        }
+        if ('email' == $_GET['error']) {
+            echo 'Mauvaise adresse email';
+        }
+    }
+    ?>
+    <form action="../Admin_connexion/Connexion.php" method="POST" >
       <input type="email" name="email" id="email" placeholder="Adresse E-mail" required>
       <input type="password" name="password" id="password" placeholder="Mot de passe" required>
       <button class="btn btn-dark" type="submit" >Connexion</button>
     </form>
     </div>
   </div>
+
   <div class="footer">
     <p><b>Tous droits reservés</b></p>
   </div>
