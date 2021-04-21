@@ -1,43 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../bootstrap/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../CSS/Template.css">
-  <link rel="stylesheet" href="style.css">
-  <title>ECF Banque</title>
-</head>
-<body>
-<div class="grid-container">
-  <div class="logo"></div>
-  <div class="subtitle">
-    <h1>Ma Banque en ligne</h1>
-  </div>
-  <div class="navigation">
-      <ul class="navbar">
-        <li class= "btn btn-secondary"> 
-          <a href="../User_connexion/index.php">Connexion</a> 
-        </li>
-        <li class= "btn btn-dark">
-          <a href="../Connexion_admin/index.php">Connexion administrateur</a> 
-        </li>
-        <li class= "btn btn-success">
-          <a href="../Inscription/index.php">Inscription</a> 
-        </li>
-      </ul>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet"href="../bootstrap/bootstrap-4.4.1-dist/css/bootstrap.css"> 
+    <link rel="stylesheet"href="style.css">
+    <title>ECF-banque</title>
+  </head>
+  <body>
+    <div class="container col-12">
+      <header class="row">
+        <img class="img-responsive logo col-md-3 col-sm-2" src="../Ressources/logo.jpg">
+        <div class="subtitle col-md-3 col-sm-2">
+          <h3>Ma Banque en ligne</h3>
+        </div>
+        <nav class="navbar-nav navbar-light navbar-expand justify-content-center col-md-6 col-sm-8 ">
+          <div class="navbar-nav">
+            <a class="nav-link nav-item" href="../User_connexion/index.php">Connexion</a> 
+            <a class="nav-link nav-item" href="../Admin_connexion/index.php">Connexion administrateur</a> 
+            <a class="nav-link nav-item" href="../Inscription/index.php">Inscription</a> 
+          </div>
+        </nav>
+      </header>
+      <content class="row-2 justify-content-center ">
+          <h1>Ma banque en ligne</h1>
+          <span  class="m-t-2">
+            <p>Bienvenue sur le site de gestion de votre banque en ligne.<br>
+            Vous pourrez ici effectuez des virements a vos proches ou encore <br>
+            consulter et gerer vos differents comptes.
+          </p>
+          </span>
+      </content>
+      <footer class="row justify-content-center align-items-center">
+        <p><b>Tous droits reservés</b></p>
+      </footer>
     </div>
-  <div class="content">
-    <h1>Ma banque en ligne</h1>
-    <p>Bienvenue sur le site de gestion de votre banque en ligne.<br>
-    Vous pourrez ici effectuez des virements a vos proches ou encore <br>
-    consulter et gerer vos differents comptes.
-    </p>
-  </div>
-  <div class="footer">
-    <p><b>Tous droits reservés</b></p>
-  </div>
-</div>
-</body>
+  </body>
 </html>

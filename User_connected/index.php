@@ -10,17 +10,22 @@
   <title>ECF Banque</title>
 </head>
 <body>
+<div class="grid-container">
+  <div class="logo"></div>
+  <div class="navigation">
+      <ul class="navbar">
+        <li class= "btn btn-danger">
+          <a href="../User_disconnected/index.php">Deconnexion</a>
+        </li>
+      </ul>
+    </div>
 <?php
   require_once '../Ressources/db.php';
-  class DB extends SQLite3
-  {
-      public function __construct()
-      {
-          $this->open('../Ressources/ECF-Banque.db');
-      }
-  }
+
   $db = new DB();
-  $email = $_POST['email'];
+  session_start();
+  var_dump($_SESSION);
+  $email = $_SESSION['email'];
 
   $req = $db->prepare('SELECT is_validated FROM user WHERE email = :email');
   $req->bindValue(':email', $email, SQLITE3_TEXT);
@@ -32,5 +37,9 @@
       require_once 'User_validated.php';
   }
   ?>
+    <div class="footer">
+    <p><b>Tous droits reservés</b></p>
+    </div>
+  </div>
 </body>
 </html>
