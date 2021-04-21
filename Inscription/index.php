@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="../bootstrap/bootstrap-4.4.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.CSS">
   <link rel="stylesheet" href="../CSS/Template.css">
-
-
   <title>ECF Banque</title>
 </head>
 <body>
@@ -20,7 +18,7 @@
   <div class="navigation">
       <ul class="navbar">
         <li class= "btn btn-primary ">
-          <a href="../Accueil/index.html">Accueil</a>
+          <a href="../Homepage/index.html">Accueil</a>
         </li>
       </ul>
     </div>
