@@ -14,6 +14,10 @@ Ici vous retrouverez la page permettant aux utilisateurs de se connecter.
 Le mot de passe prédéfini pour chaque utilisateur est 12345678.
 Pensez a le modifier manuellement dans la base de données et a le securiser avec une fonction telle que password_hash
 
+<h3>Validation des utilisateurs</h3>
+
+Une fois connecté, vous pourrez voir tout les utilisateurs en attente de validation, consulter leur piece d'identité et valider l'utilisateur si il est conforme.
+
 <h2>1.3 Utilisateur </h2>
 Ici vous retrouverez la page permettant aux utilisateurs de s'inscrire 
 Le nom du fichier ne doit pas contenir de caractères speciaux mais les tirets et underscore sont acceptés
