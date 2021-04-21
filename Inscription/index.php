@@ -26,7 +26,14 @@
     </div>
   <div class="content">
     <h2 class="subtitle-position">Formulaire d'Inscription</h2>
-    <form novalidate method = "POST" action ="../Inscription_success/index.php">
+    <?php
+    if (array_key_exists('error', $_GET)) {
+        if ('file' == $_GET['error']) {
+            echo "Le fichier selectionné ne respecte pas le format attendu";
+      }
+    }
+    ?>
+    <form method = "POST" action ="../Inscription_success/index.php" enctype="multipart/form-data">
 
         <label for="first_name">Indiquez votre prénom</label>
         <input type="text" name="first_name" id="first_name" placeholder="Prenom" required>
@@ -47,10 +54,13 @@
         <input type="password" name="password" id="password" placeholder="Mot de passe" required>
 
         <label for="password">Confirmez votre mot de passe</label>
-        <input type="password-confirm" name="password-confirm" id="password-confirm" placeholder="Mot de passe" required>
+        <input type="password-confirm" name="password-confirm" id="password-confirm" 
+        placeholder="Mot de passe" required>
 
-        <label for="identity">Selectionnez une pièce d'identité</label>
-        <input type="file" name="identity" id="identity" required>
+        <label for="uploaded_file">Selectionnez une pièce d'identité 
+        (2 mo maximum, format jpg/png uniquement. 
+        Seul les caractères alphanumeriques et les underscores/tirets sont acceptés dans le nom du fichier)</label>
+        <input type="file" name="uploaded_file" id="uploaded_file" required>
         
         <button type="submit">Valider l'inscription</button>
     </form>
