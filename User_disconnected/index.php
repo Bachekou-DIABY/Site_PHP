@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="/ECF-Banque/CSS/Template.css">
   <title>ECF Banque</title>
 </head>
+<?php
+  session_start();
+  session_destroy();
+?>
 <body>
 <div class="grid-container">
   <div class="logo"></div>
@@ -31,10 +35,7 @@
   <div class="footer">
     <p><b>Tous droits reservés</b></p>
   </div>
-  <?php
-  session_start();
-  session_destroy();
-  ?>
+
 </div>
 </body>
 </html>
