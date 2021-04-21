@@ -18,14 +18,14 @@
   <div class="navigation">
       <ul class="navbar">
         <li class= "btn btn-primary">
-          <a href="/ECF-banque/Accueil/index.html">Accueil</a>
+          <a href="../Accueil/index.html">Accueil</a>
         </li>
       </ul>
     </div>
   <div class="content">
     <h1>Vous avez bien été deconnecté</h1>
     <div>
-    <a href="/ECF-banque/Accueil/index.html">Retourner a la page d'accueil</a>
+    <a href="../Accueil/index.html">Retourner a la page d'accueil</a>
     </div>
   </div>
   <div class="footer">

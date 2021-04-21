@@ -5,8 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../bootstrap/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.CSS">
   <link rel="stylesheet" href="../CSS/Template.css">
-  <link rel="stylesheet" href="style.css">
+
   <title>ECF Banque</title>
 </head>
 <body>
@@ -17,23 +18,20 @@
   </div>
   <div class="navigation">
       <ul class="navbar">
-        <li class= "btn btn-secondary"> 
-          <a href="../User_connexion/index.php">Connexion</a> 
-        </li>
-        <li class= "btn btn-dark">
-          <a href="../Connexion_admin/index.php">Connexion administrateur</a> 
-        </li>
-        <li class= "btn btn-success">
-          <a href="../Inscription/index.php">Inscription</a> 
+        <li class= "btn btn-primary">
+          <a href="../Accueil/index.html">Accueil</a>
         </li>
       </ul>
     </div>
   <div class="content">
-    <h1>Ma banque en ligne</h1>
-    <p>Bienvenue sur le site de gestion de votre banque en ligne.<br>
-    Vous pourrez ici effectuez des virements a vos proches ou encore <br>
-    consulter et gerer vos differents comptes.
-    </p>
+    <h1>Connexion Administrateur</h1>
+    <div>
+    <form action="../Admin_connected/index.php" method="POST" >
+      <input type="email" name="email" id="email" placeholder="Adresse E-mail" required>
+      <input type="password" name="password" id="password" placeholder="Mot de passe" required>
+      <button class="btn btn-dark" type="submit" >Connexion</button>
+    </form>
+    </div>
   </div>
   <div class="footer">
     <p><b>Tous droits reservés</b></p>

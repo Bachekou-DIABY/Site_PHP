@@ -1,8 +1,5 @@
 <div class="grid-container">
   <div class="logo"></div>
-  <div class="subtitle">
-    <h1>Ma Banque en ligne</h1>
-  </div>
   <div class="navigation">
       <ul class="navbar">
         <li class= "btn btn-danger">
@@ -38,9 +35,20 @@
           $_SESSION['email'] = $res['email'];
           $_SESSION['first_name'] = $res['first_name'];
           $_SESSION['last_name'] = $res['last_name'];
-          echo 'Vous êtes connecté !'; ?>
-        <div class="content">
-          <h1>Bienvenue sur votre page d'accueil</h1>
+          $_SESSION['BankID'] = $res['BankID'];
+           ?>
+          <div class="subtitle">
+            <div class="top">
+            <?php
+            echo '<p><b>Utilisateur :</b> '.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</p>'; ?>  
+            </div>
+            <div class="bottom">
+            <?php
+            echo '<p><b>Identifiant bancaire :</b> '.$_SESSION['BankID'].'</p>'; ?>  
+            </div>
+          </div>
+          <div class="content">
+            <h1>Bienvenue sur votre page d'accueil</h1>
           <div>
             <p> Montant:</p>
           </div>

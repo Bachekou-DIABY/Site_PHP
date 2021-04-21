@@ -18,7 +18,7 @@
   <div class="navigation">
       <ul class="navbar">
         <li class= "btn btn-secondary"> 
-          <a href="../Connexion_utilisateur/index.php">Connexion</a> 
+          <a href="../User_connexion/index.php">Connexion</a> 
         </li>
         <li class= "btn btn-dark">
           <a href="../Connexion_admin/index.php">Connexion administrateur</a> 
@@ -29,12 +29,14 @@
       </ul>
     </div>
     <?php
-  require_once 'C:/xampp/htdocs../Ressources/db.php';
+  require_once '../Ressources/Bank_ID_Generator.php';
+
+  require_once '../Ressources/db.php';
   class MyDB extends SQLite3
   {
       public function __construct()
       {
-          $this->open('C:/xampp/htdocs../Ressources/ECF-Banque.db');
+          $this->open('../Ressources/ECF-Banque.db');
       }
   }
   $db = new MyDB();
@@ -45,16 +47,19 @@
   $adress = $_POST['adress'];
   $email = $_POST['email'];
   $password = $_POST['password'];
+  $bankID = generateChain(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+  var_dump($bankID);
   $pass_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-  $req = $db->prepare('INSERT INTO user(last_name,first_name,birthdate,adress,email,password)
-  VALUES(:last_name, :first_name, :birthdate, :adress, :email, :password)');
+  $req = $db->prepare('INSERT INTO user(last_name,first_name,birthdate,adress,email,password,BankID)
+  VALUES(:last_name, :first_name, :birthdate, :adress, :email, :password, :BankID)');
   $req->bindValue(':last_name', $last_name, SQLITE3_TEXT);
   $req->bindValue(':first_name', $first_name, SQLITE3_TEXT);
   $req->bindValue(':birthdate', $birthdate, SQLITE3_TEXT);
   $req->bindValue(':adress', $adress, SQLITE3_TEXT);
   $req->bindValue(':email', $email, SQLITE3_TEXT);
   $req->bindValue(':password', $pass_hash, SQLITE3_TEXT);
+  $req->bindValue(':BankID', $bankID, SQLITE3_TEXT);
   $req->execute();
   ?>
   <div class="content">
