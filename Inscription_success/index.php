@@ -21,7 +21,7 @@
           <a href="../User_connexion/index.php">Connexion</a> 
         </li>
         <li class= "btn btn-dark">
-          <a href="../Connexion_admin/index.php">Connexion administrateur</a> 
+          <a href="../Admin_connexion/index.php">Connexion administrateur</a> 
         </li>
         <li class= "btn btn-success">
           <a href="../Inscription/index.php">Inscription</a> 
@@ -34,47 +34,46 @@
     {
         return isset($uploadedFile['error']) && UPLOAD_ERR_OK === $uploadedFile['error'];
     }
-    
+
     function isUploadSmallerThan2M(array $uploadedFile): bool
     {
         return $uploadedFile['size'] < 2000000;
     }
-    
+
     function isMimeTypeAuthorized(array $authorizedMimeTypes, array $uploadedFile): bool
     {
         $finfo = new finfo(FILEINFO_MIME_TYPE);
         $mimeType = $finfo->file($uploadedFile['tmp_name']);
-    
+
         return in_array($mimeType, $authorizedMimeTypes, true);
     }
-    
+
     function getExtensionFromMimeType(array $authorizedMimeTypes, array $uploadedFile): string
     {
         $finfo = new finfo(FILEINFO_MIME_TYPE);
         $mimeType = $finfo->file($uploadedFile['tmp_name']);
-    
+
         if ($extension = array_search($mimeType, $authorizedMimeTypes, true)) {
             return $extension;
         }
-    
+
         throw new RuntimeException('Le type MIME n\'est lié à aucune extension');
     }
-    
+
     function moveUploadedFile(array $uploadedFile, string $filename, string $extension): bool
     {
         return move_uploaded_file(
             $uploadedFile['tmp_name'],
             sprintf(
-                './uploads/%s.%s.%s',
+                './uploads/%s.%s',
                 $filename,
-                sha1_file($uploadedFile['tmp_name']),
                 $extension
             )
         );
     }
-    
+
     @mkdir('./uploads', 0644);
-    
+
     // 2
     $authorizedMimeTypes = [
         'png' => 'image/png',
@@ -82,59 +81,53 @@
         'gif' => 'image/gif',
     ];
     $message = null;
-    
+
     if ('POST' === $_SERVER['REQUEST_METHOD']) {
         try {
             // 1
             $filename = $_FILES['uploaded_file']['name'] ?? null;
             $filename = preg_replace('/\.[a-z]*/s', '', $filename);
             $uploadedFile = $_FILES['uploaded_file'] ?? [];
-    
+
             // 3
             if (!isUploadSuccessful($uploadedFile)) {
                 throw new RuntimeException('Le téléchargement a échoué');
             }
-    
+
             if (!isMimeTypeAuthorized($authorizedMimeTypes, $uploadedFile)) {
                 throw new RuntimeException('Le type de fichier n\'est pas supporté');
             }
-    
+
             // 4
             if (!isUploadSmallerThan2M($uploadedFile)) {
                 throw new RuntimeException('Le fichier dépasse les 2 Mo');
             }
-    
+
             // 5
             if (!preg_match('/^[\w-]+$/', $filename)) {
                 throw new RuntimeException('Le nom du fichier ne doit pas être vide et ne contenir que des lettres, des chiffres, des tirets ou des underscores');
             }
-    
+
             if (!moveUploadedFile($uploadedFile, $filename, getExtensionFromMimeType($authorizedMimeTypes, $uploadedFile))) {
                 throw new RuntimeException('Le téléchargement a échoué');
             }
-    
+
             $message = 'Upload réussi';
         } catch (RuntimeException $e) {
             $message = $e->getMessage();
-            if ($message != 'Upload réussi') {
+            if ('Upload réussi' != $message) {
                 header('Location: ../Inscription/index.php?error=file');
-    
+
                 exit;
             }
         }
-    }    
+    }
+
   require_once '../Ressources/Bank_ID_Generator.php';
-  
 
   require_once '../Ressources/db.php';
-  class MyDB extends SQLite3
-  {
-      public function __construct()
-      {
-          $this->open('../Ressources/ECF-Banque.db');
-      }
-  }
-  $db = new MyDB();
+
+  $db = new DB();
 
   $last_name = $_POST['last_name'];
   $first_name = $_POST['first_name'];
@@ -142,11 +135,12 @@
   $adress = $_POST['adress'];
   $email = $_POST['email'];
   $password = $_POST['password'];
+  $uploadedFile = $_FILES['uploaded_file']['name'];
   $bankID = generateChain(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
   $pass_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-  $req = $db->prepare('INSERT INTO user(last_name,first_name,birthdate,adress,email,password,BankID)
-  VALUES(:last_name, :first_name, :birthdate, :adress, :email, :password, :BankID)');
+  $req = $db->prepare('INSERT INTO user(last_name,first_name,birthdate,adress,email,password,BankID,identity)
+  VALUES(:last_name, :first_name, :birthdate, :adress, :email, :password, :BankID, :identity)');
   $req->bindValue(':last_name', $last_name, SQLITE3_TEXT);
   $req->bindValue(':first_name', $first_name, SQLITE3_TEXT);
   $req->bindValue(':birthdate', $birthdate, SQLITE3_TEXT);
@@ -154,6 +148,8 @@
   $req->bindValue(':email', $email, SQLITE3_TEXT);
   $req->bindValue(':password', $pass_hash, SQLITE3_TEXT);
   $req->bindValue(':BankID', $bankID, SQLITE3_TEXT);
+  $req->bindValue(':identity', $uploadedFile, SQLITE3_TEXT);
+
   $req->execute();
 
 ?>
