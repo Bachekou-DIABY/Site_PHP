@@ -32,6 +32,11 @@ img {
 
 .subtitle { 
   grid-area: subtitle; 
+  grid-template-columns:300px;
+  grid-template-rows:200px,200px;
+  grid-template-areas:
+  "top"
+  "bottom ";
   text-align: center;
   align-items: center;
   display: grid;
@@ -56,3 +61,6 @@ a:hover{
   align-items: center;
 }
 
+.topleft{
+  display: grid;
+}
