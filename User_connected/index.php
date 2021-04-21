@@ -24,7 +24,6 @@
 
   $db = new DB();
   session_start();
-  var_dump($_SESSION);
   $email = $_SESSION['email'];
 
   $req = $db->prepare('SELECT is_validated FROM user WHERE email = :email');
