@@ -26,7 +26,7 @@
     </div>
   <div class="content">
     <h2 class="subtitle-position">Formulaire d'Inscription</h2>
-    <form method = "POST" action ="../Inscription_success/index.php">
+    <form novalidate method = "POST" action ="../Inscription_success/index.php">
 
         <label for="first_name">Indiquez votre prénom</label>
         <input type="text" name="first_name" id="first_name" placeholder="Prenom" required>
@@ -47,12 +47,14 @@
         <input type="password" name="password" id="password" placeholder="Mot de passe" required>
 
         <label for="password">Confirmez votre mot de passe</label>
-        <input type="password" name="password" id="password" placeholder="Mot de passe" required>
+        <input type="password-confirm" name="password-confirm" id="password-confirm" placeholder="Mot de passe" required>
 
         <label for="identity">Selectionnez une pièce d'identité</label>
         <input type="file" name="identity" id="identity" required>
+        
         <button type="submit">Valider l'inscription</button>
     </form>
+    <script src="script.js"></script>
   </div>
   <div class="footer">
     <p><b>Tous droits reservés</b></p>
