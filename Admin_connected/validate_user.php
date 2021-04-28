@@ -2,7 +2,6 @@
 
   require_once '../Ressources/db.php';
 
-  var_dump($_GET['user_id']);
   $db = new DB();
 
   $user_id = $_GET['user_id'];

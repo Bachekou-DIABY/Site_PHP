@@ -23,12 +23,18 @@
 
       exit;
   }
+
   session_start();
   $_SESSION['id'] = $res['id'];
   $_SESSION['email'] = $res['email'];
   $_SESSION['first_name'] = $res['first_name'];
   $_SESSION['last_name'] = $res['last_name'];
-  $_SESSION['BankID'] = $res['BankID'];
-  header('Location: ../Admin_connected/index.php');
+  $_SESSION['password'] = $res['password'];
+  if (0 == $res['first_connexion']) {
+      header('Location: ../Admin_connexion/first_connexion.php');
 
-  exit;
+      exit;
+  }
+    header('Location: ../Admin_connected/index.php');
+
+    exit;

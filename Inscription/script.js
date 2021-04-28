@@ -3,8 +3,6 @@ let last_name = document.getElementById('last_name')
 let password = document.getElementById('password')
 let email = document.getElementById('email')
 let passConfirmation = document.getElementById('password-confirm')
-let annee = document.getElementById('annee')
-let age = document.getElementById('age')
 let form = document.querySelector('form')
 console.log("form:", form);
 let error = '';

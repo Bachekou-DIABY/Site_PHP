@@ -17,12 +17,16 @@
         <li class= "btn btn-danger">
           <a href="../User_disconnected/index.php">Deconnexion</a>
         </li>
+        <li class= "btn btn-info">
+          <a href="../Modify_login_info/index.php">Gerer le profil</a>
+        </li>
       </ul>
     </div>
   <div class="subtitle">
     <div class="top">
     <?php
-    echo '<p><b>Utilisateur :</b> '.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</p>'; ?>  
+    echo '<p><b>Utilisateur :</b> '.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</p>';
+    ?>  
     </div>
   </div>
   <?php

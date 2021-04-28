@@ -27,10 +27,12 @@
     <?php
     if (array_key_exists('error', $_GET)) {
         if ('file' == $_GET['error']) {
-            echo "Le fichier selectionné ne respecte pas le format attendu";
-      }
+            $message = $_GET['message'];
+            echo $message;
+        }
     }
     ?>
+    
     <form method = "POST" action ="../Inscription_success/index.php" enctype="multipart/form-data">
 
         <label for="first_name">Indiquez votre prénom</label>
@@ -52,7 +54,7 @@
         <input type="password" name="password" id="password" placeholder="Mot de passe" required>
 
         <label for="password">Confirmez votre mot de passe</label>
-        <input type="password-confirm" name="password-confirm" id="password-confirm" 
+        <input type="password" name="password-confirm" id="password-confirm" 
         placeholder="Mot de passe" required>
 
         <label for="uploaded_file">Selectionnez une pièce d'identité 
@@ -60,7 +62,7 @@
         Seul les caractères alphanumeriques et les underscores/tirets sont acceptés dans le nom du fichier)</label>
         <input type="file" name="uploaded_file" id="uploaded_file" required>
         
-        <button type="submit">Valider l'inscription</button>
+        <button class="btn btn-success" type="submit">Valider l'inscription</button>
     </form>
     <script src="script.js"></script>
   </div>
