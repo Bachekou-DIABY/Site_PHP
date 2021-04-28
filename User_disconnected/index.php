@@ -29,7 +29,7 @@
   <div class="content">
     <h1>Vous avez bien été deconnecté</h1>
     <div>
-    <a href="../Accueil/index.html">Retourner a la page d'accueil</a>
+    <a href="../Homepage/index.html">Retourner a la page d'accueil</a>
     </div>
   </div>
   <div class="footer">
