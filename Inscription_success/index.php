@@ -127,7 +127,7 @@
 
   require_once '../Ressources/db.php';
 
-  $db = new DB();
+  $db = db_connect();
 
   $last_name = $_POST['last_name'];
   $first_name = $_POST['first_name'];
@@ -139,18 +139,11 @@
   $bankID = generateChain(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
   $pass_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-  $req = $db->prepare('INSERT INTO user(last_name,first_name,birthdate,adress,email,password,BankID,identity)
-  VALUES(:last_name, :first_name, :birthdate, :adress, :email, :password, :BankID, :identity)');
-  $req->bindValue(':last_name', $last_name, SQLITE3_TEXT);
-  $req->bindValue(':first_name', $first_name, SQLITE3_TEXT);
-  $req->bindValue(':birthdate', $birthdate, SQLITE3_TEXT);
-  $req->bindValue(':adress', $adress, SQLITE3_TEXT);
-  $req->bindValue(':email', $email, SQLITE3_TEXT);
-  $req->bindValue(':password', $pass_hash, SQLITE3_TEXT);
-  $req->bindValue(':BankID', $bankID, SQLITE3_TEXT);
-  $req->bindValue(':identity', $uploadedFile, SQLITE3_TEXT);
+  $stmt = $db->prepare('INSERT INTO user(last_name,first_name,birthdate,adress,email,password,BankID,identity)
+  VALUES(?,?,?,?,?,?,?,?)');
+  $stmt->bind_param('ssssssss', $last_name, $first_name, $birthdate, $adress, $email, $pass_hash, $bankID, $uploadedFile);
 
-  $req->execute();
+  $stmt->execute();
 
 ?>
   <div class="content">
