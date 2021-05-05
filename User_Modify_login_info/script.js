@@ -1,10 +1,8 @@
 let first_name = document.getElementById('first_name')
 let last_name = document.getElementById('last_name')
-let password = document.getElementById('password')
 let email = document.getElementById('email')
-let passConfirmation = document.getElementById('password-confirm')
-
-
+let email_confirm = document.getElementById('email_confirm')
+let password_new = document.getElementById('password_new')
 let form = document.querySelector('form')
 console.log("form:", form);
 let error = '';
@@ -33,9 +31,9 @@ function validPassword(value) {
   return '';
 }
 
-function passConfirm(password, passConfirmation) {
-  if (password !== passConfirmation) {
-    return 'Les 2 mots de passe doivent être identiques\n'
+function emailConfirm(email, email_confirm) {
+  if (email !== email_confirm) {
+    return 'Les 2 adresses email doivent être identiques\n'
   }
 
   return '';
@@ -43,7 +41,6 @@ function passConfirm(password, passConfirmation) {
 
 form.addEventListener('submit', (event) => {
   error = ''
-  error += passConfirm(password.value, passConfirmation.value)
   for(var count=0; count<form.elements.length; count++) {
     switch (form.elements[count].name) {
       case 'first_name':
@@ -52,10 +49,12 @@ form.addEventListener('submit', (event) => {
       case 'last_name':
         error+= validLastName(form.elements[count].value)
         break;  
-      case 'password':
+      case 'password_new':
         error += validPassword(form.elements[count].value)
         break; 
-
+      case 'email':
+        error += emailConfirm(email.value, email_confirm.value)
+        break;
     }
   }
 

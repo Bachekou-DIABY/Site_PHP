@@ -2,22 +2,21 @@
 
   require_once '../Ressources/db.php';
 
-  $db = new DB();
+  $db = db_connect();
   $email = $_POST['email'];
   $password = $_POST['password'];
-  var_dump($password);
-  var_dump($email);
 
-  $req = $db->prepare('SELECT * FROM banker WHERE email = :email');
-  $req->bindValue(':email', $email, SQLITE3_TEXT);
-  $res = $req->execute()->fetchArray(SQLITE3_ASSOC);
+  $stmt = $db->prepare("SELECT id,password,last_name,first_name,first_connexion FROM banker WHERE email = '{$email}'");
+  $stmt->execute();
+  $stmt->bind_result($id, $pass_hash, $last_name, $first_name, $first_connexion);
+  $stmt->fetch();
 
-  if (!$res) {
+  if (!$id) {
       header('Location: ../Admin_connexion/index.php?error=email');
 
       exit;
   }
-  $isPasswordCorrect = password_verify($password, $res['password']);
+  $isPasswordCorrect = password_verify($password, $pass_hash);
   if (!$isPasswordCorrect) {
       header('Location: ../Admin_connexion/index.php?error=password');
 
@@ -25,12 +24,14 @@
   }
 
   session_start();
-  $_SESSION['id'] = $res['id'];
-  $_SESSION['email'] = $res['email'];
-  $_SESSION['first_name'] = $res['first_name'];
-  $_SESSION['last_name'] = $res['last_name'];
-  $_SESSION['password'] = $res['password'];
-  if (0 == $res['first_connexion']) {
+  $_SESSION['id'] = $id;
+  $_SESSION['email'] = $email;
+  $_SESSION['first_name'] = $first_name;
+  $_SESSION['last_name'] = $last_name;
+  $_SESSION['password'] = $password;
+  $_SESSION['first_connexion'] = $first_connexion;
+
+  if (0 == $first_connexion) {
       header('Location: ../Admin_connexion/first_connexion.php');
 
       exit;

@@ -139,7 +139,7 @@
   $bankID = generateChain(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
   $pass_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-  $stmt = $db->prepare('INSERT INTO user(last_name,first_name,birthdate,adress,email,password,BankID,identity)
+  $stmt = $db->prepare('INSERT INTO users(last_name,first_name,birthdate,adress,email,password,BankID,identity)
   VALUES(?,?,?,?,?,?,?,?)');
   $stmt->bind_param('ssssssss', $last_name, $first_name, $birthdate, $adress, $email, $pass_hash, $bankID, $uploadedFile);
 

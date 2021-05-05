@@ -18,7 +18,7 @@
           <a href="../User_disconnected/index.php">Deconnexion</a>
         </li>
         <li class= "btn btn-info">
-          <a href="../Modify_login_info/index.php">Gerer le profil</a>
+          <a href="../Admin_Modify_login_info/index.php">Gerer le profil</a>
         </li>
       </ul>
     </div>
@@ -31,8 +31,8 @@
   </div>
   <?php
   require_once '../Ressources/db.php';
-  $db = new DB();
-  $req = $db->prepare('SELECT * FROM user WHERE is_validated=0');
+  $db = db_connect();
+  $stmt = $db->prepare('SELECT id,first_name,last_name,email,BankID,identity FROM users WHERE is_validated=0');
   ?>
   <div class="container content">
     <div class="row">
@@ -52,21 +52,22 @@
           </thead>
           <tbody>
           <?php
-          $req = $req->execute();
-          while ($res = $req->fetchArray(SQLITE3_ASSOC)) {
+          $stmt->execute();
+          $stmt->bind_result($id, $first_name, $last_name, $email, $BankID, $identity);
+          while ($stmt->fetch()) {
               ?>
           <tr>
-            <th scope="row"><?php echo $res['id']; ?></th>
-            <td scope="row"><?php echo $res['first_name']; ?></td>
-            <td scope="row"><?php echo $res['last_name']; ?></td>
-            <td scope="row"><?php echo $res['email']; ?></td>
-            <td scope="row"><?php echo $res['BankID']; ?></td>
+            <th scope="row"><?php echo $id; ?></th>
+            <td scope="row"><?php echo $first_name; ?></td>
+            <td scope="row"><?php echo $last_name; ?></td>
+            <td scope="row"><?php echo $email; ?></td>
+            <td scope="row"><?php echo $BankID; ?></td>
             <td scope="row">
-              <a href="../inscription_success/uploads/<?php echo $res['identity']; ?>">Voir la pièce</a>
+              <a href="../inscription_success/uploads/<?php echo $identity; ?>">Voir la pièce</a>
             </td>
             <td>
               <button class="btn btn-success" type="submit">
-                <a href="validate_user.php?user_id=<?php echo $res['id']; ?>"
+                <a href="validate_user.php?user_id=<?php echo $id; ?>"
                 >Valider
                 </a>
               </button>
@@ -83,6 +84,45 @@
       </div>
       <div class="col">
       <h6>Supprimer un utilisateur<h6>
+        <table class="table table-dark table-bordered table-sm">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nom</th>
+              <th scope="col">Prenom</th>
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php
+          $stmt = $db->prepare('SELECT id,first_name,last_name,email FROM users WHERE ask_delete=1');
+          $stmt->execute();
+          $stmt->bind_result($id, $first_name, $last_name, $email);
+          while ($stmt->fetch()) {
+              ?>
+          <tr>
+            <th scope="row"><?php echo $id; ?></th>
+            <td scope="row"><?php echo $first_name; ?></td>
+            <td scope="row"><?php echo $last_name; ?></td>
+            <td scope="row"><?php echo $email; ?></td>
+            <td>
+              <button class="btn btn-danger" type="submit">
+                <a href="delete_user.php?user_id=<?php echo $id; ?>"
+                >Valider la suppression
+                </a>
+              </button>
+              <?php
+
+              ?>
+            </td>
+          </tr>
+          <?php
+          }
+          ?>
+        </tbody>
+        </table>
+      </div>
+      <div class="col">      
       </div>
     </div>
     <div class="row">

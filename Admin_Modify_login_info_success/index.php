@@ -10,6 +10,14 @@
   <title>ECF Banque</title>
 </head>
 <body>
+<?php
+require_once '../Ressources/db.php';
+$db = db_connect();
+session_start();
+$admin_id = $_SESSION['id'];
+$req = $db->prepare("UPDATE banker SET first_connexion=1 WHERE id='{$admin_id}'");
+$req->execute();
+?>
 <div class="grid-container">
   <div class="logo"></div>
   <div class="subtitle">
@@ -23,28 +31,9 @@
       </ul>
     </div>
   <div class="content">
-    <h1>Connexion utilisateur</h1>
-    <div>
-    <?php
-    session_start();
-    if (array_key_exists('error', $_GET)) {
-        if ('password' == $_GET['error']) {
-            echo 'Mauvais mot de passe';
-        }
-        if ('email' == $_GET['error']) {
-            echo 'Mauvaise adresse email';
-        }
-    }
-    ?>
-    
-    <form action="../User_connexion/Connexion.php" method="POST" >
-      <input type="email" name="email" id="email" placeholder="Adresse E-mail" required>
-      <input type="password" name="password" id="password" placeholder="Mot de passe" required>
-      <button class="btn btn-dark" type="submit" >Connexion</button>
-    </form>
-    </div>
+    <h1>Les informations ont bien été modifiées</h1>
+    <a href="../Admin_connexion/index.php">Se connecter a nouveau</a>
   </div>
-
   <div class="footer">
     <p><b>Tous droits reservés</b></p>
   </div>

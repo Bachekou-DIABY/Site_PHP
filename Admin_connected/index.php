@@ -1,7 +1,7 @@
 
 <?php
 require_once '../Ressources/db.php';
-$db = new DB();
+$db = db_connect();
 session_start();
 
 $email = $_SESSION['email'];

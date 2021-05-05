@@ -12,12 +12,10 @@
 <body>
 <?php
 require_once '../Ressources/db.php';
-$db = new DB();
+$db = db_connect();
 session_start();
 $admin_id = $_SESSION['id'];
-$req = $db->prepare('UPDATE banker SET first_connexion=1 WHERE id=:admin_id');
-$req->bindValue(':admin_id', $admin_id, SQLITE3_INTEGER);
-$req->execute();
+
 ?>
 <div class="grid-container">
   <div class="logo"></div>
@@ -27,13 +25,13 @@ $req->execute();
   <div class="navigation">
       <ul class="navbar">
         <li class= "btn btn-primary">
-          <a href="../Admin_connected/Admin_connected.php">Retour</a>
+          <a href="../Homepage/index.html">Accueil</a>
         </li>
       </ul>
     </div>
   <div class="content">
     <h1>Les informations ont bien été modifiées</h1>
-    <a href="../Admin_connexion/index.php">Se connecter a nouveau</a>
+    <a href="../User_connexion/index.php">Se connecter a nouveau</a>
   </div>
   <div class="footer">
     <p><b>Tous droits reservés</b></p>

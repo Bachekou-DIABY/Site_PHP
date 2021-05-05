@@ -6,8 +6,7 @@
 
   $user_id = $_GET['user_id'];
 
-  $stmt = $db->prepare("UPDATE users SET is_validated=1 WHERE id='{$user_id}'");
-
+  $stmt = $db->prepare("DELETE FROM users WHERE id='{$user_id}'");
   $stmt->execute();
 
   header('Location: ../Admin_connected/index.php');

@@ -17,24 +17,38 @@
         <li class= "btn btn-danger">
           <a href="../User_disconnected/index.php">Deconnexion</a>
         </li>
+        <?php session_start();
+        if (1 === $_SESSION['is_validated']) {?>
+        <li class= "btn btn-info">
+          <a href="../User_Modify_login_info/index.php">Gerer le profil</a>
+        </li>
+        <?php
+}
+        ?>
       </ul>
     </div>
 <?php
   require_once '../Ressources/db.php';
 
-  $db = new DB();
+  $db = db_connect();
   session_start();
   $email = $_SESSION['email'];
+  $stmt = $db->prepare("SELECT is_validated FROM users WHERE email = '{$email}'");
+  $stmt->execute();
+  $stmt->bind_result($is_validated);
+  $stmt->fetch();
 
-  $req = $db->prepare('SELECT is_validated FROM user WHERE email = :email');
-  $req->bindValue(':email', $email, SQLITE3_TEXT);
-  $is_validated = $req->execute()->fetchArray(SQLITE3_ASSOC)['is_validated'];
+  if (1 === $_SESSION['ask_delete']) {
+      header('Location: ../User_ask_for_delete/index.php');
 
+      exit;
+  }
   if (0 === $is_validated) {
       require_once 'User_not_validated.php';
   } else {
       require_once 'User_validated.php';
   }
+
   ?>
     <div class="footer">
     <p><b>Tous droits reservés</b></p>

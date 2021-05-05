@@ -42,10 +42,10 @@
         <input type="text" name="last_name" id="last_name" placeholder="Nom de famille"required>
 
         <label for="birthdate">Indiquez votre date de naissance</label>
-        <input type="date" name="birthdate" id="birthdate" >
+        <input type="date" name="birthdate" id="birthdate" required>
 
         <label for="adress">Indiquez votre adresse</label>
-        <input type="text" name="adress" id="adress" placeholder="75 rue du pont">
+        <input type="text" name="adress" id="adress" placeholder="75 rue du pont" required>
 
         <label for="email"> Saisissez votre adresse email</label>
         <input type="email" name="email" id="email" placeholder="jeandupont@gmail.com" required>

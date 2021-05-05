@@ -2,31 +2,37 @@
 
   require_once '../Ressources/db.php';
 
-  $db = new DB();
+  $db = db_connect();
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  $req = $db->prepare('SELECT * FROM user WHERE email = :email');
-  $req->bindValue(':email', $email, SQLITE3_TEXT);
-  $res = $req->execute()->fetchArray(SQLITE3_ASSOC);
+  $stmt = $db->prepare("SELECT id,password,last_name,first_name,birthdate,adress,is_validated,BankID,identity,ask_delete FROM users WHERE email = '{$email}'");
+  $stmt->execute();
+  $stmt->bind_result($id, $pass_hash, $last_name, $first_name, $birhdate, $adress, $is_validated, $BankID, $identity, $ask_delete);
+  $stmt->fetch();
 
-  if (!$res) {
+  if (!$id) {
       header('Location: ../User_connexion/index.php?error=email');
 
       exit;
   }
-  $isPasswordCorrect = password_verify($password, $res['password']);
+  $isPasswordCorrect = password_verify($password, $pass_hash);
   if (!$isPasswordCorrect) {
       header('Location: ../User_connexion/index.php?error=password');
 
       exit;
   }
+
   session_start();
-  $_SESSION['id'] = $res['id'];
-  $_SESSION['email'] = $res['email'];
-  $_SESSION['first_name'] = $res['first_name'];
-  $_SESSION['last_name'] = $res['last_name'];
-  $_SESSION['BankID'] = $res['BankID'];
+  $_SESSION['id'] = $id;
+  $_SESSION['email'] = $email;
+  $_SESSION['first_name'] = $first_name;
+  $_SESSION['last_name'] = $last_name;
+  $_SESSION['BankID'] = $BankID;
+  $_SESSION['password'] = $password;
+  $_SESSION['ask_delete'] = $ask_delete;
+  $_SESSION['is_validated'] = $is_validated;
+
   header('Location: ../User_connected/index.php');
 
   exit;
