@@ -4,71 +4,96 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name=" description "  content="">
+
   <link rel="stylesheet" href="../bootstrap/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.CSS">
-  <link rel="stylesheet" href="../CSS/Template.css">
-  <title>ECF Banque</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="../CSS/style.css">
+  <title>ECF-Banque</title>
 </head>
 <body>
-<div class="grid-container">
-  <div class="logo"></div>
-  <div class="subtitle">
-    <h1>Ma Banque en ligne</h1>
-  </div>
-  <div class="navigation">
-      <ul class="navbar">
-        <li class= "btn btn-primary ">
-          <a href="../Homepage/index.html">Accueil</a>
-        </li>
-      </ul>
+  <header class="container-fluid">
+    <div class="row">
+      <div class="col-4 logo"></div>
+      <div class="col-8">
+        <h1>Ma banque en ligne</h1>
+      </div>
     </div>
-  <div class="content">
-    <h2 class="subtitle-position">Formulaire d'Inscription</h2>
-    <?php
-    if (array_key_exists('error', $_GET)) {
-        if ('file' == $_GET['error']) {
-            $message = $_GET['message'];
-            echo $message;
-        }
-    }
-    ?>
-    
-    <form method = "POST" action ="../Inscription_success/index.php" enctype="multipart/form-data">
+    <div class="row navbar position">
+      <nav class="col d-flex navbar navbar-light navbar-expand-sm ">
+        <div class="container-fluid ">
+          <a class="navbar-brand" href=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav nav-justified w-100 ">
+            <a class="nav-link" href="../Homepage/index.php">Accueil</a>
+              <a class="nav-link" href="../User_connexion/index.php">Connexion</a>
+              <a class="nav-link" href="../Admin_connexion/index.php">Connexion Administrateur</a>
+              <a class="nav-link" href="../Inscription/index.php">Inscription</a>
+            </div>
+          </div>    
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="container-fluid">
+    <div class="row position d-block">
+      <h1>Connexion utilisateur</h1>
+    <div>
+    <div class="row position d-flex">
+      <form method = "POST" action ="./Inscription_success.php" enctype="multipart/form-data">
 
         <label for="first_name">Indiquez votre prénom</label>
-        <input type="text" name="first_name" id="first_name" placeholder="Prenom" required>
+        <input class="inscription-form" type="text" name="first_name" id="first_name" placeholder="Prenom" required>
 
         <label for="last_name">Indiquez votre nom de famille</label>
-        <input type="text" name="last_name" id="last_name" placeholder="Nom de famille"required>
+        <input class="inscription-form"  type="text" name="last_name" id="last_name" placeholder="Nom de famille"required>
 
         <label for="birthdate">Indiquez votre date de naissance</label>
-        <input type="date" name="birthdate" id="birthdate" required>
+        <input class="inscription-form" type="date" name="birthdate" id="birthdate" required>
 
         <label for="adress">Indiquez votre adresse</label>
-        <input type="text" name="adress" id="adress" placeholder="75 rue du pont" required>
+        <input class="inscription-form"  type="text" name="adress" id="adress" placeholder="75 rue du pont" required>
 
         <label for="email"> Saisissez votre adresse email</label>
-        <input type="email" name="email" id="email" placeholder="jeandupont@gmail.com" required>
-        
+        <input class="inscription-form"  type="email" name="email" id="email" placeholder="jeandupont@gmail.com" required>
+
         <label for="password">Saisissez votre mot de passe</label>
-        <input type="password" name="password" id="password" placeholder="Mot de passe" required>
+        <input class="inscription-form"  type="password" name="password" id="password" placeholder="Mot de passe" required>
 
         <label for="password">Confirmez votre mot de passe</label>
-        <input type="password" name="password-confirm" id="password-confirm" 
+        <input class="inscription-form"  type="password" name="password-confirm" id="password-confirm" 
         placeholder="Mot de passe" required>
 
         <label for="uploaded_file">Selectionnez une pièce d'identité 
         (2 mo maximum, format jpg/png uniquement. 
         Seul les caractères alphanumeriques et les underscores/tirets sont acceptés dans le nom du fichier)</label>
-        <input type="file" name="uploaded_file" id="uploaded_file" required>
+        <input class="inscription-form"  type="file" name="uploaded_file" id="uploaded_file" required>
         
-        <button class="btn btn-success" type="submit">Valider l'inscription</button>
-    </form>
+        <button class="inscription-form"  type="submit">Valider l'inscription</button>
+      </form>
     <script src="script.js"></script>
-  </div>
-  <div class="footer">
-    <p><b>Tous droits reservés</b></p>
-  </div>
-</div>
+    </div>
+    <div class="row position">
+      <?php
+      if (array_key_exists('error', $_GET)) {
+          if ('email_exists' == $_GET['error']) {?>
+              <p class="error"> <br>Attention : L'adresse email indiquée est dejà utilisée </p>
+          <?php
+          }
+      }
+      ?>
+    </div>
+  </main>
+  <footer class="container-fluid">
+    <div class="row position">
+      <p>Tous droits reservés</p>
+    </div>
+  </footer>
 </body>
 </html>
