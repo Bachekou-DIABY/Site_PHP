@@ -6,9 +6,9 @@
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  $stmt = $db->prepare("SELECT id,password,last_name,first_name,birthdate,adress,is_validated,BankID,identity,ask_delete FROM users WHERE email = '{$email}'");
+  $stmt = $db->prepare("SELECT id,password,last_name,first_name,birthdate,adress,is_validated,BankID,identity,ask_delete,amount FROM users WHERE email = '{$email}'");
   $stmt->execute();
-  $stmt->bind_result($id, $pass_hash, $last_name, $first_name, $birhdate, $adress, $is_validated, $BankID, $identity, $ask_delete);
+  $stmt->bind_result($id, $pass_hash, $last_name, $first_name, $birhdate, $adress, $is_validated, $BankID, $identity, $ask_delete, $amount);
   $stmt->fetch();
 
   if (!$id) {
@@ -32,6 +32,7 @@
   $_SESSION['password'] = $password;
   $_SESSION['ask_delete'] = $ask_delete;
   $_SESSION['is_validated'] = $is_validated;
+  $_SESSION['amount'] = $amount;
 
   header('Location: ../User_connected/index.php');
 

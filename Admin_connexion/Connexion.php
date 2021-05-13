@@ -36,6 +36,6 @@
 
       exit;
   }
-    header('Location: ../Admin_connected/index.php');
+    header('Location: ../Admin_connected/admin_connected.php');
 
     exit;
