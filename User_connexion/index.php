@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="row navbar position">
-      <nav class="col d-flex navbar navbar-light navbar-expand-sm ">
+      <nav class="col d-flex navbar navbar-dark navbar-expand-sm ">
         <div class="container-fluid ">
           <a class="navbar-brand" href=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav nav-justified w-100 ">
               <a class="nav-link" href="../Homepage/index.php">Accueil</a>
-              <a class="nav-link" href="../User_connexion/index.php">Connexion</a>
+              <a class="nav-link active" href="../User_connexion/index.php">Connexion</a>
               <a class="nav-link" href="../Admin_connexion/index.php">Connexion Administrateur</a>
               <a class="nav-link" href="../Inscription/index.php">Inscription</a>
             </div>
