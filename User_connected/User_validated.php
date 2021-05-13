@@ -2,10 +2,10 @@
     <div class="row">
       <div class="col-4 logo"></div>
       <div class="col-8">
-        <div class="row identifiants position">         
+        <div class="row identifiants">         
           <?php echo '<p><b>Utilisateur :</b> '.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</p>'; ?> 
         </div>
-        <div class="row identifiants position">         
+        <div class="row identifiants">         
           <?php echo '<p><b>Identifiant bancaire :</b> '.$_SESSION['BankID'].'</p>'; ?>  
         </div>
       </div>

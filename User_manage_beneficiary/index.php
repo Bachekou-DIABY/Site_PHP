@@ -17,7 +17,6 @@
 <body>
 <?php
   session_start();
-  session_destroy();
 ?>
   <header class="container-fluid">
     <div class="row">
@@ -35,10 +34,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav nav-justified w-100 ">
-              <a class="nav-link active" href="../Homepage/index.php">Accueil</a>
-              <a class="nav-link" href="../User_connexion/index.php">Connexion</a>
-              <a class="nav-link" href="../Admin_connexion/index.php">Connexion Administrateur</a>
-              <a class="nav-link" href="../Inscription/index.php">Inscription</a>
+              <a class="nav-link"href="../User_connected/index.php">Retour</a>
             </div>
           </div>    
         </div>
@@ -47,8 +43,21 @@
   </header>
   <main class="container-fluid">
     <div class="row position d-block">
-      <h1>Vous avez bien été deconnecté</h1>
-      <a href="../Homepage/index.php">Retourner a la page d'accueil</a>
+      <h1>Ajouter un Bénéficiaire</h1>
+      <form method = "POST" action ="add_beneficiary.php">
+
+      <label for="first_name">Indiquez le prénom du bénéficiaire</label>
+      <input class="form-size" type="text" name="first_name" id="first_name" placeholder="Prenom" required>
+
+      <label for="last_name">Indiquez le nom de famille du bénéficiaire</label>
+      <input class="form-size" type="text" name="last_name" id="last_name" placeholder="Nom de famille"required>
+
+      <label for="BankID">Indiquez l'identifiant bancaire du bénéficiaire</label>
+      <input class="form-size" type="text" name="BankID" id="BankID" placeholder="Identifiant a 10 caractères"required>
+
+      <button type="submit">Valider l'inscription</button>
+
+      </form>
     </div>
   </main>
   <footer class="container-fluid">
@@ -58,3 +67,7 @@
   </footer>
 </body>
 </html>
+
+
+          
+

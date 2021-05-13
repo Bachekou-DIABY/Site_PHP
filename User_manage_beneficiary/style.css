@@ -6,12 +6,17 @@
   padding: 0 20px;
 }
 
+.error{
+  color:red;
+  font-weight: bold;
+}
+
 form {
   max-width: 420px;
 }
 
 form label {
-  display: block;
+  display: grid;
   font-weight: bold;
   margin-bottom: 5px;
 }
