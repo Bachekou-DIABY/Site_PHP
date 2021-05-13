@@ -1,6 +1,115 @@
-.content {
-  grid-area: content;
-  display: grid;
-  text-align: center;
-  margin-top: 20px;
+/** global style**/
+
+body{
+  background-color: lightblue;
+}
+
+.position{
+  justify-content: center;
+  text-align:center;
+  align-items: center;
+}
+
+.m-0{
+  margin: 0px;
+}
+
+.p-0{
+  padding:0;
+}
+
+h1, p {
+  font-size: 1em;
+}**/
+
+/** Header style**/
+header{
+  display: block;
+}
+
+header .row{
+  height:5em;
+}
+
+.logo {
+  max-height: 100%;
+  background: url(../Ressources/logo.jpg) no-repeat;
+  background-size: contain;
+}
+
+/** Navbar style **/
+header > .navbar > nav .active {
+  background-color: #466966 ;
+  text-decoration: underline;
+}
+
+nav{
+  background-color: #466966;
+}
+
+/** Main style **/
+main{
+  display: block;
+  min-height: 65vh;
+}
+
+/** Footer style **/
+
+footer{
+  display:block;
+  height: 50px;
+  padding-top: 10px;
+}
+
+/** Media queries **/
+
+
+@media screen and (min-width: 768px){
+ header .row{
+   height: 8em;
+ }
+ main{
+   min-height: 55vh;
+ }
+ h1{
+   font-size: 3em;
+ }
+ footer .row{
+   height:1em;
+ }
+}
+
+/** form style **/
+
+form {
+  max-width: 700px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+label.inline-label {
+  display: inline-block;
+}
+
+fieldset {
+  border: 1px solid lightgray;
+  background-color: rgba(225, 233, 255, 0.25);
+}
+
+.form-input[type="text"], form select, form textarea {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 80%;
+}
+
+button[type=submit] {
+  color: #efefef;
+  background-color: var(--secondary-bg-color);
+  padding: 10px;
+  margin-top: 15px;
 }
