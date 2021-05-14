@@ -1,7 +1,18 @@
 /** global style**/
 
 body{
+  overflow-x: hidden;
   background-color: lightblue;
+}
+
+a{
+  color:white;
+  text-decoration: none;
+}
+
+a:hover{
+  color:black;
+  text-decoration: none;
 }
 
 .position{
@@ -18,9 +29,13 @@ body{
   padding:0;
 }
 
-h1, p {
+h1{
+  font-size: 1.5em;
+}
+
+p {
   font-size: 1em;
-}**/
+}
 
 /** Header style**/
 header{
@@ -31,6 +46,12 @@ header .row{
   height:5em;
 }
 
+.row .identifiants{
+  height: 2.5em;
+  font-size:0.9em;
+  justify-content: start;
+}
+
 .logo {
   max-height: 100%;
   background: url(../Ressources/logo.jpg) no-repeat;
@@ -39,12 +60,15 @@ header .row{
 
 /** Navbar style **/
 header > .navbar > nav .active {
-  background-color: #466966 ;
   text-decoration: underline;
 }
 
 nav{
   background-color: #466966;
+}
+
+.navbar-nav{
+  justify-content: space-around;
 }
 
 /** Main style **/
@@ -61,28 +85,46 @@ footer{
   padding-top: 10px;
 }
 
+footer p{
+  font-weight: bold;
+}
 /** Media queries **/
 
 
 @media screen and (min-width: 768px){
- header .row{
+  header .row{
    height: 8em;
- }
- main{
+  }
+
+  main{
    min-height: 55vh;
- }
- h1{
+  }
+
+  h1{
    font-size: 3em;
- }
- footer .row{
+  }
+  footer .row{
    height:1em;
- }
+  }
+  .form-size{
+    width: 300px;
+  }
+  .row .identifiants{
+    font-size:1.2em;
+  }
 }
 
 /** form style **/
 
-form {
-  max-width: 700px;
+input{
+  width:200px;
+  margin-bottom: 10px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+input[type=file]{
+  width:auto
 }
 
 form label {
@@ -100,16 +142,25 @@ fieldset {
   background-color: rgba(225, 233, 255, 0.25);
 }
 
-.form-input[type="text"], form select, form textarea {
-  display: inline-block;
-  margin-bottom: 10px;
+button[type=submit] {
+  display:flex;
+  color: #efefef;
+  background-color:#466966;
   padding: 10px;
-  width: 80%;
+  margin-left:auto;
+  margin-right: auto;
 }
 
-button[type=submit] {
-  color: #efefef;
-  background-color: var(--secondary-bg-color);
-  padding: 10px;
-  margin-top: 15px;
+button{
+  background-color:rgba(236, 15, 15, 0.781);
+  padding:10px;
+  margin-top:10px;
+}
+
+.black{
+  color: black;
+}
+
+.connected h1{
+  font-size: 1em;
 }
