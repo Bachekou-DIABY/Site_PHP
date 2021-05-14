@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="row navbar position">
-      <nav class="col d-flex navbar navbar-light navbar-expand-sm ">
+      <nav class="col d-flex navbar navbar-dark navbar-expand-sm ">
         <div class="container-fluid ">
           <a class="navbar-brand" href=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
             <a class="nav-link" href="../Homepage/index.php">Accueil</a>
               <a class="nav-link" href="../User_connexion/index.php">Connexion</a>
               <a class="nav-link" href="../Admin_connexion/index.php">Connexion Administrateur</a>
-              <a class="nav-link" href="../Inscription/index.php">Inscription</a>
+              <a class="nav-link active" href="../Inscription/index.php">Inscription</a>
             </div>
           </div>    
         </div>
@@ -43,7 +43,7 @@
   </header>
   <main class="container-fluid">
     <div class="row position d-block">
-      <h1>Connexion utilisateur</h1>
+      <h1>Formulaire d'inscription</h1>
     <div>
     <div class="row position d-flex">
       <form method = "POST" action ="./Inscription_success.php" enctype="multipart/form-data">
@@ -75,7 +75,7 @@
         Seul les caractères alphanumeriques et les underscores/tirets sont acceptés dans le nom du fichier)</label>
         <input class="inscription-form"  type="file" name="uploaded_file" id="uploaded_file" required>
         
-        <button class="inscription-form"  type="submit">Valider l'inscription</button>
+        <button type="submit">Valider l'inscription</button>
       </form>
     <script src="script.js"></script>
     </div>
@@ -97,3 +97,4 @@
   </footer>
 </body>
 </html>
+
