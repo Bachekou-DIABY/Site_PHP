@@ -1,10 +1,8 @@
 <?php
 
   require_once '../Ressources/db.php';
-
-  $db = db_connect();
   session_start();
-  var_dump($_SESSION);
+  $db = db_connect();
   $id = $_SESSION['id'];
 
   $stmt = $db->prepare("UPDATE users SET ask_delete=0 WHERE id='{$id}'");

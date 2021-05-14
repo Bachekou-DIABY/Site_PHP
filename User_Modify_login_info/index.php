@@ -21,13 +21,18 @@
   <header class="container-fluid">
     <div class="row">
       <div class="col-4 logo"></div>
-      <div class="col-8">
+      <div class="col-6">
         <div class="row identifiants position">         
           <?php echo '<p><b>Utilisateur :</b> '.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</p>'; ?> 
         </div>
         <div class="row identifiants position">         
           <?php echo '<p><b>Identifiant bancaire :</b> '.$_SESSION['BankID'].'</p>'; ?>  
         </div>
+      </div>
+      <div class="col-2 warning">
+        <button class="warning" onclick="return confirm('Etes-vous sur de bien vouloir supprimer le compte ?')" >
+        <a class="black" href="../User_ask_for_delete/User_ask_for_delete.php">Supprimer le compte</a>
+        </button>
       </div>
     </div>
     <div class="row navbar position">
@@ -73,6 +78,7 @@
         <input class="modify-info-form"  type="password" name="password_new" id="password_new" placeholder="Nouveau mot de passe" required>
       
         <button type="submit" >Valider les informations</button>
+
       </form> 
       <script src="script.js"></script>
     </div>
