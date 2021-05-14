@@ -55,7 +55,7 @@
       <label for="BankID">Indiquez l'identifiant bancaire du bénéficiaire</label>
       <input class="form-size" type="text" name="BankID" id="BankID" placeholder="Identifiant a 10 caractères"required>
 
-      <button type="submit">Valider l'inscription</button>
+      <button class="btn btn-info" type="submit">Valider l'inscription</button>
 
       </form>
     </div>
