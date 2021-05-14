@@ -29,8 +29,8 @@
           <?php echo '<p><b>Identifiant bancaire :</b> '.$_SESSION['BankID'].'</p>'; ?>  
         </div>
       </div>
-      <div class="col-2 warning">
-        <button class="warning" onclick="return confirm('Etes-vous sur de bien vouloir supprimer le compte ?')" >
+      <div class="col-2 d-block ">
+        <button class="btn btn-danger d-flex" onclick="return confirm('Etes-vous sur de bien vouloir supprimer le compte ?')" >
         <a class="black" href="../User_ask_for_delete/User_ask_for_delete.php">Supprimer le compte</a>
         </button>
       </div>
@@ -60,24 +60,24 @@
       <form action="modify_info.php" method="POST" >
       
         <label for="first_name">Indiquez votre prénom</label>
-        <input class="modify-info-form" type="text" name="first_name" id="first_name" placeholder="Prénom" required>
+        <input class="form-size" type="text" name="first_name" id="first_name" placeholder="Prénom" required>
       
         <label for="last_name">Indiquez votre nom de famille</label>
-        <input class="modify-info-form" type="text" name="last_name" id="last_name" placeholder="Nom" required>
+        <input class="form-size" type="text" name="last_name" id="last_name" placeholder="Nom" required>
       
         <label for="email"> Saisissez votre adresse email</label>
-        <input class="modify-info-form" type="email" name="email" id="email" placeholder="Adresse E-mail" required>
+        <input class="form-size" type="email" name="email" id="email" placeholder="Adresse E-mail" required>
 
         <label for="email_confirm"> Saisissez a nouveau votre adresse email</label>
-        <input class="modify-info-form" type="email" name="email_confirm" id="email_confirm" placeholder="Adresse E-mail" required>
+        <input class="form-size" type="email" name="email_confirm" id="email_confirm" placeholder="Adresse E-mail" required>
 
         <label for="password">Saisissez l'ancien mot de passe</label>
-        <input class="modify-info-form"  type="password" name="password_old" id="password_old" placeholder="Mot de passe" required>
+        <input class="form-size"  type="password" name="password_old" id="password_old" placeholder="Mot de passe" required>
       
         <label for="password">Saisissez le nouveau mot de passe</label>
-        <input class="modify-info-form"  type="password" name="password_new" id="password_new" placeholder="Nouveau mot de passe" required>
+        <input class="form-size"  type="password" name="password_new" id="password_new" placeholder="Nouveau mot de passe" required>
       
-        <button type="submit" >Valider les informations</button>
+        <button class="btn btn-info" type="submit" >Valider les informations</button>
 
       </form> 
       <script src="script.js"></script>

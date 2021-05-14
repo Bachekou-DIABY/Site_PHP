@@ -5,13 +5,22 @@ body{
   background-color: lightblue;
 }
 
+table{
+  margin:auto;
+}
+
+.error{
+  color:red;
+  font-weight: bold;
+}
+
 a{
   color:white;
   text-decoration: none;
 }
 
 a:hover{
-  color:black;
+  color:white;
   text-decoration: none;
 }
 
@@ -48,7 +57,7 @@ header .row{
 
 .row .identifiants{
   height: 2.5em;
-  font-size:0.9em;
+  font-size:0.8em;
   justify-content: start;
 }
 
@@ -64,8 +73,10 @@ header > .navbar > nav .active {
 }
 
 nav{
+  z-index:2;
   background-color: #466966;
 }
+
 
 .navbar-nav{
   justify-content: space-around;
@@ -112,12 +123,15 @@ footer p{
   .row .identifiants{
     font-size:1.2em;
   }
+  button{
+    padding: 20px;
+  }
 }
 
 /** form style **/
 
 input{
-  width:200px;
+  width:50%;
   margin-bottom: 10px;
   margin-left:auto;
   margin-right:auto;
@@ -142,23 +156,22 @@ fieldset {
   background-color: rgba(225, 233, 255, 0.25);
 }
 
-button[type=submit] {
+.btn-info {
   display:flex;
   color: #efefef;
-  background-color:#466966;
   padding: 10px;
+  margin-top: 10px;
   margin-left:auto;
   margin-right: auto;
 }
 
-button{
-  background-color:rgba(236, 15, 15, 0.781);
-  padding:10px;
-  margin-top:10px;
-}
-
-.black{
-  color: black;
+.btn-danger {
+  display:flex;
+  color: #efefef;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left:auto;
+  margin-right: auto;
 }
 
 .connected h1{

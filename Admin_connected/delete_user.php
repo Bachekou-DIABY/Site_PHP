@@ -9,6 +9,6 @@
   $stmt = $db->prepare("DELETE FROM users WHERE id='{$user_id}'");
   $stmt->execute();
 
-  header('Location: ../Admin_connected/index.php');
+  header('Location: ../Admin_connected/Admin_connected.php');
 
   exit;

@@ -50,7 +50,7 @@
       <form action="../User_connexion/Connexion.php" method="POST" >
         <input type="email" name="email" id="email" placeholder="Adresse E-mail" required>
         <input type="password" name="password" id="password" placeholder="Mot de passe" required>
-        <button class="align-item-center" type="submit" >Connexion</button>
+        <button class="align-item-center btn btn-info" type="submit" >Connexion</button>
       </form>
     </div>
     <div class="row position">

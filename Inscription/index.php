@@ -44,42 +44,6 @@
   <main class="container-fluid">
     <div class="row position d-block">
       <h1>Formulaire d'inscription</h1>
-    <div>
-    <div class="row position d-flex">
-      <form method = "POST" action ="./Inscription_success.php" enctype="multipart/form-data">
-
-        <label for="first_name">Indiquez votre prénom</label>
-        <input class="inscription-form" type="text" name="first_name" id="first_name" placeholder="Prenom" required>
-
-        <label for="last_name">Indiquez votre nom de famille</label>
-        <input class="inscription-form"  type="text" name="last_name" id="last_name" placeholder="Nom de famille"required>
-
-        <label for="birthdate">Indiquez votre date de naissance</label>
-        <input class="inscription-form" type="date" name="birthdate" id="birthdate" required>
-
-        <label for="adress">Indiquez votre adresse</label>
-        <input class="inscription-form"  type="text" name="adress" id="adress" placeholder="75 rue du pont" required>
-
-        <label for="email"> Saisissez votre adresse email</label>
-        <input class="inscription-form"  type="email" name="email" id="email" placeholder="jeandupont@gmail.com" required>
-
-        <label for="password">Saisissez votre mot de passe</label>
-        <input class="inscription-form"  type="password" name="password" id="password" placeholder="Mot de passe" required>
-
-        <label for="password">Confirmez votre mot de passe</label>
-        <input class="inscription-form"  type="password" name="password-confirm" id="password-confirm" 
-        placeholder="Mot de passe" required>
-
-        <label for="uploaded_file">Selectionnez une pièce d'identité 
-        (2 mo maximum, format jpg/png uniquement. 
-        Seul les caractères alphanumeriques et les underscores/tirets sont acceptés dans le nom du fichier)</label>
-        <input class="inscription-form"  type="file" name="uploaded_file" id="uploaded_file" required>
-        
-        <button type="submit">Valider l'inscription</button>
-      </form>
-    <script src="script.js"></script>
-    </div>
-    <div class="row position">
       <?php
       if (array_key_exists('error', $_GET)) {
           if ('email_exists' == $_GET['error']) {?>
@@ -88,6 +52,40 @@
           }
       }
       ?>
+    <div>
+    <div class="row position d-flex">
+      <form method = "POST" action ="./Inscription_success.php" enctype="multipart/form-data">
+
+        <label for="first_name">Indiquez votre prénom</label>
+        <input class="form-size" type="text" name="first_name" id="first_name" placeholder="Prenom" required>
+
+        <label for="last_name">Indiquez votre nom de famille</label>
+        <input class="form-size"  type="text" name="last_name" id="last_name" placeholder="Nom de famille"required>
+
+        <label for="birthdate">Indiquez votre date de naissance</label>
+        <input class="form-size" type="date" name="birthdate" id="birthdate" required>
+
+        <label for="adress">Indiquez votre adresse</label>
+        <input class="form-size"  type="text" name="adress" id="adress" placeholder="75 rue du pont" required>
+
+        <label for="email"> Saisissez votre adresse email</label>
+        <input class="form-size"  type="email" name="email" id="email" placeholder="jeandupont@gmail.com" required>
+
+        <label for="password">Saisissez votre mot de passe</label>
+        <input class="form-size"  type="password" name="password" id="password" placeholder="Mot de passe" required>
+
+        <label for="password">Confirmez votre mot de passe</label>
+        <input class="form-size"  type="password" name="password-confirm" id="password-confirm" 
+        placeholder="Mot de passe" required>
+
+        <label for="uploaded_file">Selectionnez une pièce d'identité 
+        (2 mo maximum, format jpg/png uniquement. 
+        Seul les caractères alphanumeriques et les underscores/tirets sont acceptés dans le nom du fichier)</label>
+        <input class="form-size"  type="file" name="uploaded_file" id="uploaded_file" required>
+        
+        <button class="btn btn-info" type="submit">Valider l'inscription</button>
+      </form>
+    <script src="script.js"></script>
     </div>
   </main>
   <footer class="container-fluid">

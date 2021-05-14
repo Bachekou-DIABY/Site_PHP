@@ -10,6 +10,6 @@
 
   $stmt->execute();
 
-  header('Location: ../Admin_connected/index.php');
+  header('Location: ../Admin_connected/Admin_connected.php');
 
   exit;
