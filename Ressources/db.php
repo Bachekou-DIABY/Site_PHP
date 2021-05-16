@@ -15,9 +15,9 @@ function db_connect()
     $dbopts = parse_url(getenv('DATABASE_URL'));
 
     return new DB(
-        'us-cdbr-east-03.cleardb.com',
-        'b1be912b1df6a8',
-        '507f8e59',
+        'localhost',
+        'root',
+        'root',
         'heroku_85e4eb877a354da',
         3306,
         null,
