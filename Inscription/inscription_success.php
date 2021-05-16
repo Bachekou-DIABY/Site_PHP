@@ -50,7 +50,6 @@
   </main>
   <footer class="container-fluid">
     <div class="row position">
-      <?php var_dump($dbopts); ?>
       <p>Tous droits reservés</p>
     </div>
   </footer>
@@ -154,7 +153,7 @@
   require_once '../Ressources/db.php';
 
   $db = db_connect();
-
+  var_dump($dbopts);
   $last_name = $_POST['last_name'];
   $first_name = $_POST['first_name'];
   $birthdate = $_POST['birthdate'];
