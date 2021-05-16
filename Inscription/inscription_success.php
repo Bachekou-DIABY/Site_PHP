@@ -152,6 +152,7 @@
 
   require_once '../Ressources/db.php';
 
+  $db = db_connect();
   $last_name = $_POST['last_name'];
   $first_name = $_POST['first_name'];
   $birthdate = $_POST['birthdate'];
