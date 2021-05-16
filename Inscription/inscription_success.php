@@ -50,6 +50,7 @@
   </main>
   <footer class="container-fluid">
     <div class="row position">
+      <?php var_dump($dbopts); ?>
       <p>Tous droits reservés</p>
     </div>
   </footer>
@@ -180,7 +181,6 @@
     $stmt->bind_param('ssssssss', $last_name, $first_name, $birthdate, $adress, $email, $pass_hash, $bankID, $uploadedFile);
 
     $stmt->execute();
-    var_dump($dbopts);
 
   ?>
 
