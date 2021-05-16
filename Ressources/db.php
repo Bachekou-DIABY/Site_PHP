@@ -26,4 +26,5 @@ function db_connect()
     );
     var_dump($dbopts);
 }
+db_connect();
 var_dump($dbopts);
