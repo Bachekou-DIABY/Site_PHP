@@ -30,16 +30,16 @@ $sql = "CREATE TABLE users (
   is_validated tinyint NOT NULL DEFAULT '0',
   ask_delete tinyint NOT NULL DEFAULT '0',
   amount float NOT NULL DEFAULT '0'
-) 
+) ";
 
-ALTER TABLE banker
+$sql = 'ALTER TABLE banker
   ADD PRIMARY KEY (id);
 
 ALTER TABLE users
   ADD PRIMARY KEY (id) USING BTREE;
 
 ALTER TABLE users
-  MODIFY id int NOT NULL AUTO_INCREMENT;";
+  MODIFY id int NOT NULL AUTO_INCREMENT;';
 
 require_once '../Ressources/db.php';
 
