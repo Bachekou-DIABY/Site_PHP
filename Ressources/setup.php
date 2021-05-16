@@ -1,5 +1,7 @@
 <?php
 
+$sql = 'CREATE DATABASE heroku_85e4eb877a354da';
+
 $sql = "CREATE TABLE banker (
   id int NOT NULL,
   last_name varchar(50) NOT NULL,
