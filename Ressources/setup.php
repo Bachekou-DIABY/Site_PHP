@@ -9,14 +9,6 @@ $sql = "CREATE TABLE banker (
   first_connexion tinyint NOT NULL DEFAULT '0'
 ) 
 
-CREATE TABLE beneficiary (
-  id int NOT NULL,
-  last_name varchar(30) NOT NULL,
-  first_name varchar(30) NOT NULL,
-  email varchar(50) NOT NULL,
-  BankID varchar(10) NOT NULL
-) 
-
 CREATE TABLE users (
   id int NOT NULL,
   last_name varchar(50) NOT NULL,
