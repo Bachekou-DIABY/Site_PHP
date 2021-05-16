@@ -7,7 +7,7 @@ $sql = "CREATE TABLE banker (
   email varchar(50) NOT NULL,
   password varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   first_connexion tinyint NOT NULL DEFAULT '0'
-) DEFAULT CHARSET=utf8mb3;
+) 
 
 CREATE TABLE beneficiary (
   id int NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE beneficiary (
   first_name varchar(30) NOT NULL,
   email varchar(50) NOT NULL,
   BankID varchar(10) NOT NULL
-) DEFAULT CHARSET=utf8mb3;
+) 
 
 CREATE TABLE users (
   id int NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE users (
   is_validated tinyint NOT NULL DEFAULT '0',
   ask_delete tinyint NOT NULL DEFAULT '0',
   amount float NOT NULL DEFAULT '0'
-) DEFAULT CHARSET=utf8mb3;
+) 
 
 ALTER TABLE banker
   ADD PRIMARY KEY (id);
