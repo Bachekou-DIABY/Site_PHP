@@ -1,6 +1,8 @@
 <?php
 
-$sql = 'CREATE DATABASE heroku_85e4eb877a354da';
+require_once '../Ressources/db.php';
+
+$db = db_connect();
 
 $sql = "CREATE TABLE banker (
   id int NOT NULL,
@@ -10,6 +12,8 @@ $sql = "CREATE TABLE banker (
   password varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   first_connexion tinyint NOT NULL DEFAULT '0'
 ) ";
+$stmt = $db->prepare($sql);
+$stmt->execute();
 
 $sql = 'CREATE TABLE beneficiary (
   id int NOT NULL,
@@ -18,6 +22,9 @@ $sql = 'CREATE TABLE beneficiary (
   email varchar(50) NOT NULL,
   BankID varchar(10) NOT NULL
 ) ';
+
+$stmt = $db->prepare($sql);
+$stmt->execute();
 
 $sql = "CREATE TABLE users (
   id int NOT NULL,
@@ -34,17 +41,23 @@ $sql = "CREATE TABLE users (
   amount float NOT NULL DEFAULT '0'
 ) ";
 
+$stmt = $db->prepare($sql);
+$stmt->execute();
+
 $sql = 'ALTER TABLE banker
   ADD PRIMARY KEY (id)';
+
+$stmt = $db->prepare($sql);
+$stmt->execute();
 
 $sql = 'ALTER TABLE users
   ADD PRIMARY KEY (id) USING BTREE';
 
+$stmt = $db->prepare($sql);
+$stmt->execute();
+
 $sql = 'ALTER TABLE users
   MODIFY id int NOT NULL AUTO_INCREMENT';
 
-require_once '../Ressources/db.php';
-
-$db = db_connect();
 $stmt = $db->prepare($sql);
 $stmt->execute();
