@@ -54,7 +54,7 @@
       ?>
     <div>
     <div class="row position d-flex">
-      <form method = "POST" action ="./Inscription_success.php" enctype="multipart/form-data">
+      <form method = "POST" action ="./inscription_success.php" enctype="multipart/form-data">
 
         <label for="first_name">Indiquez votre prénom</label>
         <input class="form-size" type="text" name="first_name" id="first_name" placeholder="Prenom" required>
