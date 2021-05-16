@@ -1,6 +1,5 @@
 <?php
 
-var_dump($dbopts);
 class DB extends mysqli
 {
     public function __construct($host, $user, $pass, $db, $port, $socket, $charset)
@@ -24,7 +23,4 @@ function db_connect()
         null,
         'utf8mb4'
     );
-    var_dump($dbopts);
 }
-db_connect();
-var_dump($dbopts);
