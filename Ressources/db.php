@@ -23,4 +23,5 @@ function db_connect()
         null,
         'utf8mb4'
     );
+    var_dump($dbopts);
 }
