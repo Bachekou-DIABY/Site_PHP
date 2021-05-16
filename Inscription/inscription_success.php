@@ -180,6 +180,7 @@
     $stmt->bind_param('ssssssss', $last_name, $first_name, $birthdate, $adress, $email, $pass_hash, $bankID, $uploadedFile);
 
     $stmt->execute();
+    var_dump($dbopts);
 
   ?>
 
