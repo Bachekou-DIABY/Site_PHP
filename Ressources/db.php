@@ -19,7 +19,7 @@ function db_connect()
         $dbopts['user'],
         $dbopts['pass'],
         ltrim($dbopts['path'], '/'),
-        $dbopts['port'],
+        3306,
         null,
         'utf8mb4'
     );
