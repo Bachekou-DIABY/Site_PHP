@@ -33,13 +33,13 @@ $sql = "CREATE TABLE users (
 ) ";
 
 $sql = 'ALTER TABLE banker
-  ADD PRIMARY KEY (id);
+  ADD PRIMARY KEY (id)';
 
-ALTER TABLE users
-  ADD PRIMARY KEY (id) USING BTREE;
+$sql = 'ALTER TABLE users
+  ADD PRIMARY KEY (id) USING BTREE';
 
-ALTER TABLE users
-  MODIFY id int NOT NULL AUTO_INCREMENT;';
+$sql = 'ALTER TABLE users
+  MODIFY id int NOT NULL AUTO_INCREMENT';
 
 require_once '../Ressources/db.php';
 
