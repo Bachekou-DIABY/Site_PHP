@@ -31,7 +31,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav nav-justified w-100 ">
-            <a class="nav-link" href="../Homepage/index.php">Accueil</a>
+              <a class="nav-link" href="../Homepage/index.php">Accueil</a>
               <a class="nav-link" href="../User_connexion/index.php">Connexion</a>
               <a class="nav-link" href="../Admin_connexion/index.php">Connexion Administrateur</a>
               <a class="nav-link active" href="../Inscription/index.php">Inscription</a>

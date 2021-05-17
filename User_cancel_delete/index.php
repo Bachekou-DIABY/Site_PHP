@@ -34,7 +34,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav nav-justified w-100 ">
-              <a class="nav-link" href="../User_disconnected/index.php">Deconnexion</a>
+              <a class="nav-link" href="../Homepage/index.php">Accueil</a>
             </div>
           </div>    
         </div>
