@@ -48,21 +48,47 @@
   </header>
   <main class="container-fluid">
     <div class="row position d-block">
-      <h1>Ajouter un Bénéficiaire</h1>
-      <form method = "POST" action ="add_beneficiary.php">
-
-      <label for="first_name">Indiquez le prénom du bénéficiaire</label>
-      <input class="form-size" type="text" name="first_name" id="first_name" placeholder="Prenom" required>
-
-      <label for="last_name">Indiquez le nom de famille du bénéficiaire</label>
-      <input class="form-size" type="text" name="last_name" id="last_name" placeholder="Nom de famille"required>
-
-      <label for="BankID">Indiquez l'identifiant bancaire du bénéficiaire</label>
-      <input class="form-size" type="text" name="BankID" id="BankID" placeholder="Identifiant a 10 caractères"required>
-
-      <button class="btn btn-info" type="submit">Valider l'inscription</button>
-
-      </form>
+      <h5>Valider un utilisateur</h5>
+      <table class="table table-dark table-bordered table-sm col-8">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Email</th>
+            <th scope="col">BankID</th>
+            <th scope="col">Piece d'identité</th>
+            <th scope="col">Valider</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php
+        $stmt->execute();
+        $stmt->bind_result($id, $first_name, $last_name, $email, $BankID, $identity);
+        while ($stmt->fetch()) {
+            ?>
+        <tr>
+          <th scope="row"><?php echo $id; ?></th>
+          <td scope="row"><?php echo $first_name; ?></td>
+          <td scope="row"><?php echo $last_name; ?></td>
+          <td scope="row"><?php echo $email; ?></td>
+          <td scope="row"><?php echo $BankID; ?></td>
+          <td scope="row">
+            <a href="../Inscription/uploads/<?php echo $identity; ?>">Voir la pièce</a>
+          </td>
+          <td>
+            <button class="btn btn-success" type="submit">
+              <a href="validate_user.php?user_id=<?php echo $id; ?>">
+                Valider
+              </a>
+            </button>
+          </td>
+        </tr>
+        <?php
+        }
+        ?>
+        </tbody>
+      </table>
     </div>
   </main>
   <footer class="container-fluid">
