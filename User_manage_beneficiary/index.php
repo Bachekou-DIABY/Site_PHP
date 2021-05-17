@@ -19,10 +19,11 @@
   if (!session_start()) {
       session_start();
   }
+  var_dump($id);
 
   require_once '../Ressources/db.php';
   $db = db_connect();
-  $stmt = $db->prepare("SELECT id,first_name,last_name,BankID FROM beneficiary WHERE id='{$_SESSION}['id']}'");
+  $stmt = $db->prepare("SELECT id,first_name,last_name,BankID FROM beneficiary WHERE id='{$id}'");
   ?>
   <header class="container-fluid">
     <div class="row">
