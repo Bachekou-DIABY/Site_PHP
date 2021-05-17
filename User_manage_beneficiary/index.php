@@ -29,7 +29,7 @@
           <?php echo '<p><b>Identifiant bancaire :</b> '.$_SESSION['BankID'].'</p>'; ?>  
         </div>
       </div>
-    <div>
+    </div>
     <div class="row navbar position">
       <nav class="col d-flex navbar navbar-dark navbar-expand-sm ">
         <div class="container-fluid ">
