@@ -72,8 +72,8 @@
         while ($stmt->fetch()) {
             ?>
         <tr>
-          <td ><?php echo $first_name; ?></td>
           <td ><?php echo $last_name; ?></td>
+          <td ><?php echo $first_name; ?></td>
           <td ><?php echo $BankID; ?></td>
           <td >
             <form action="./wire.php" method="POST">
