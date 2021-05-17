@@ -20,6 +20,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav nav-justified w-100 ">
               <a class="nav-link" href="../User_Modify_login_info/index.php">Gerer le profil</a>
+              <a class="nav-link" href="../User_add_beneficiary/index.php">Ajouter un bénéficiaire</a>
               <a class="nav-link" href="../User_manage_beneficiary/index.php">Gerer les bénéficiaires</a>
               <a class="nav-link" href="../User_disconnected/index.php">Deconnexion</a>
             </div>
