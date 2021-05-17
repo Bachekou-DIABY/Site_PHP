@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `heroku_85e4eb877a354da` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `heroku_85e4eb877a354da`;
 -- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
 --
 -- Host: us-cdbr-east-03.cleardb.com    Database: heroku_85e4eb877a354da
@@ -41,7 +39,7 @@ CREATE TABLE `banker` (
 
 LOCK TABLES `banker` WRITE;
 /*!40000 ALTER TABLE `banker` DISABLE KEYS */;
-INSERT INTO `banker` VALUES (1,'Dupont','Jean','dupont.jean@gmail.com','$2y$10$BEpcM0K.1t/OAobZGUllqet7bWAsVy.sMj1BiNcs83XHZNChKqrHq',0),(2,'Dupont','Jeanne','dupont.jeanne@gmail.com','$2y$10$Ag8ZkREucXfBy4FS2O2bOeh7ayezQ2zuHrO7D.oDjN.TH0euxUdG6',0),(3,'Dupont','Pierre','dupont.pierre@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(4,'Dupont','Paul','dupont.paul@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(5,'Dupont','Jacques','dupont.jacques@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0);
+INSERT INTO `banker` VALUES (1,'Dupont','Jean','dupont.jean@gmail.com','$2y$10$Ag8ZkREucXfBy4FS2O2bOeh7ayezQ2zuHrO7D.oDjN.TH0euxUdG6',0),(2,'Dupont','Jeanne','dupont.jeanne@gmail.com','$2y$10$Ag8ZkREucXfBy4FS2O2bOeh7ayezQ2zuHrO7D.oDjN.TH0euxUdG6',0),(3,'Dupont','Pierre','dupont.pierre@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(4,'Dupont','Paul','dupont.paul@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(5,'Dupont','Jacques','dupont.jacques@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0);
 /*!40000 ALTER TABLE `banker` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -116,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-17 18:23:09
+-- Dump completed on 2021-05-17 21:09:06
