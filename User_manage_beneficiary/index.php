@@ -59,7 +59,6 @@
       <table class="table table-dark table-bordered table-sm col-8">
         <thead>
           <tr>
-            <th scope="col">ID</th>
             <th scope="col">Nom</th>
             <th scope="col">Prenom</th>
             <th scope="col">BankID</th>
@@ -73,7 +72,6 @@
         while ($stmt->fetch()) {
             ?>
         <tr>
-          <th scope="row"><?php echo $id; ?></th>
           <td ><?php echo $first_name; ?></td>
           <td ><?php echo $last_name; ?></td>
           <td ><?php echo $BankID; ?></td>

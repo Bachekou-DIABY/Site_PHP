@@ -54,7 +54,6 @@
       <table class="table table-dark table-bordered table-sm col-8">
         <thead>
           <tr>
-            <th scope="col">ID</th>
             <th scope="col">Nom</th>
             <th scope="col">Prenom</th>
             <th scope="col">Email</th>
@@ -70,7 +69,6 @@
         while ($stmt->fetch()) {
             ?>
         <tr>
-          <th scope="row"><?php echo $id; ?></th>
           <td scope="row"><?php echo $first_name; ?></td>
           <td scope="row"><?php echo $last_name; ?></td>
           <td scope="row"><?php echo $email; ?></td>
@@ -97,7 +95,6 @@
       <table class="table table-dark table-bordered table-sm col-8">
         <thead>
           <tr>
-            <th scope="col">ID</th>
             <th scope="col">Nom</th>
             <th scope="col">Prenom</th>
             <th scope="col">Email</th>
@@ -111,7 +108,6 @@
         while ($stmt->fetch()) {
             ?>
         <tr>
-          <th scope="row"><?php echo $id; ?></th>
           <td scope="row"><?php echo $first_name; ?></td>
           <td scope="row"><?php echo $last_name; ?></td>
           <td scope="row"><?php echo $email; ?></td>
@@ -128,9 +124,6 @@
         ?>
         </tbody>
       </table>
-    </div>
-    <div class="row position d-block">
-      <h6>Valider un beneficiaire<h6>
     </div>
   </main>
   <footer class="container-fluid">
