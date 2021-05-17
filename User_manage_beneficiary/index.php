@@ -19,6 +19,7 @@
   if (!session_start()) {
       session_start();
   }
+  $id = $_SESSION['id'];
   var_dump($id);
 
   require_once '../Ressources/db.php';
