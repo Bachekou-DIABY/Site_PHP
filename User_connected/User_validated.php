@@ -32,7 +32,6 @@
   <main class="container-fluid">
     <div class="row position d-block">
       <h1>Bienvenue sur votre page d'accueil</h1>
-      
       <?php $db = db_connect();
       $email = $_SESSION['email'];
       $stmt = $db->prepare("SELECT amount FROM users WHERE email = '{$email}'");
