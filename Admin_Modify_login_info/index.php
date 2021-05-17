@@ -17,7 +17,6 @@
 <body>
   <?php
   session_start();
-  var_dump($_SESSION);
   ?>
   <header class="container-fluid">
     <div class="row">
@@ -40,7 +39,7 @@
             <?php if (0 == $_SESSION['first_connexion']) { ?>
               <a class="nav-link" href="../Admin_connexion/first_connexion.php">Retour</a>
             <?php } else {?>
-              <a class="nav-link" href="../Admin_connexion/Admin_connected.php">Retour</a>
+              <a class="nav-link" href="../Admin_connected/Admin_connected.php">Retour</a>
             <?php }?>
               <a class="nav-link" href="../User_disconnected/index.php">Deconnexion</a>
             </div>

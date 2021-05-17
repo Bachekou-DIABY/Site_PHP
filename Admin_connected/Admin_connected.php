@@ -19,7 +19,6 @@
   if (!session_start()) {
       session_start();
   }
-  var_dump($_SESSION);
 
   require_once '../Ressources/db.php';
   $db = db_connect();
