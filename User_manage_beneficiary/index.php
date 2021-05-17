@@ -18,7 +18,7 @@
 <?php
   session_start();
   $db = db_connect();
-  $stmt = $db->prepare("SELECT id,first_name,last_name,BankID FROM beneficiary WHERE id='{$user_id}'");
+  $stmt = $db->prepare("SELECT user_id,first_name,last_name,BankID FROM beneficiary WHERE id='{$user_id}'");
   ?>
   <header class="container-fluid">
     <div class="row">
@@ -57,21 +57,19 @@
             <th scope="col">ID</th>
             <th scope="col">Nom</th>
             <th scope="col">Prenom</th>
-            <th scope="col">Email</th>
             <th scope="col">BankID</th>
           </tr>
         </thead>
         <tbody>
         <?php
         $stmt->execute();
-        $stmt->bind_result($id, $first_name, $last_name, $email, $BankID);
+        $stmt->bind_result($user_id, $first_name, $last_name, $BankID);
         while ($stmt->fetch()) {
             ?>
         <tr>
-          <th scope="row"><?php echo $id; ?></th>
+          <th scope="row"><?php echo $user_id; ?></th>
           <td scope="row"><?php echo $first_name; ?></td>
           <td scope="row"><?php echo $last_name; ?></td>
-          <td scope="row"><?php echo $email; ?></td>
           <td scope="row"><?php echo $BankID; ?></td>
         </tr>
         <?php
