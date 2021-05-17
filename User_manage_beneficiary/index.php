@@ -21,9 +21,8 @@
   }
 
   require_once '../Ressources/db.php';
-
   $db = db_connect();
-  $stmt = $db->prepare("SELECT user_id,first_name,last_name,BankID FROM beneficiary WHERE id='{$user_id}'");
+  $stmt = $db->prepare("SELECT id,first_name,last_name,BankID FROM beneficiary WHERE id='{$user_id}'");
   ?>
   <header class="container-fluid">
     <div class="row">
@@ -68,11 +67,11 @@
         <tbody>
         <?php
         $stmt->execute();
-        $stmt->bind_result($user_id, $first_name, $last_name, $BankID);
+        $stmt->bind_result($id, $first_name, $last_name, $BankID);
         while ($stmt->fetch()) {
             ?>
         <tr>
-          <th scope="row"><?php echo $user_id; ?></th>
+          <th scope="row"><?php echo $id; ?></th>
           <td scope="row"><?php echo $first_name; ?></td>
           <td scope="row"><?php echo $last_name; ?></td>
           <td scope="row"><?php echo $BankID; ?></td>
@@ -91,7 +90,3 @@
   </footer>
 </body>
 </html>
-
-
-          
-
