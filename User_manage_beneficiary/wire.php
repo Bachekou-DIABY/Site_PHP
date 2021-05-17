@@ -6,7 +6,7 @@ if (!session_start()) {
 }
 $wire = $_POST['wire'];
 if ($wire < 0) {
-    header('Location : ./index.php?error=negative_amount');
+    header('Location: ./index.php?error=negative_amount');
 
     exit;
 }
