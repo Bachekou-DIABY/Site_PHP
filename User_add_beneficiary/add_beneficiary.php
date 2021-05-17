@@ -15,6 +15,6 @@ VALUES(?,?,?,?)');
 $stmt->bind_param('isss', $user_id, $last_name, $first_name, $bankID);
 $stmt->execute();
 
-header('Location: ../User_connected/User_validated.php');
+header('Location: ../User_connected/index.php');
 
 exit;
