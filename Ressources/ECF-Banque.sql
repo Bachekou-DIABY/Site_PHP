@@ -41,7 +41,7 @@ CREATE TABLE `banker` (
 
 LOCK TABLES `banker` WRITE;
 /*!40000 ALTER TABLE `banker` DISABLE KEYS */;
-INSERT INTO `banker` VALUES (1,'Dupont','Jean','dupont.jean@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(2,'Dupont','Jeanne','dupont.jeanne@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(3,'Dupont','Pierre','dupont.pierre@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(4,'Dupont','Paul','dupont.paul@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(5,'Dupont','Jacques','dupont.jacques@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0);
+INSERT INTO `banker` VALUES (1,'Dupont','Jean','dupont.jean@gmail.com','$2y$10$BEpcM0K.1t/OAobZGUllqet7bWAsVy.sMj1BiNcs83XHZNChKqrHq',0),(2,'Dupont','Jeanne','dupont.jeanne@gmail.com','$2y$10$Ag8ZkREucXfBy4FS2O2bOeh7ayezQ2zuHrO7D.oDjN.TH0euxUdG6',0),(3,'Dupont','Pierre','dupont.pierre@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(4,'Dupont','Paul','dupont.paul@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(5,'Dupont','Jacques','dupont.jacques@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0);
 /*!40000 ALTER TABLE `banker` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,11 +53,15 @@ DROP TABLE IF EXISTS `beneficiary`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `beneficiary` (
-  `id` int(11) NOT NULL,
-  `last_name` varchar(30) NOT NULL,
-  `first_name` varchar(30) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `BankID` varchar(10) NOT NULL
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `BankID` varchar(30) DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_user_beneficiary_idx` (`user_id`),
+  KEY `BankID_user_beneficiary_idx` (`BankID`),
+  CONSTRAINT `id_user_beneficiary` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -85,13 +89,13 @@ CREATE TABLE `users` (
   `adress` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
   `PASSWORD` varchar(60) NOT NULL,
-  `BankID` varchar(30) DEFAULT NULL,
+  `BankID` varchar(30) NOT NULL,
   `identity` varchar(100) DEFAULT NULL,
   `is_validated` tinyint(4) NOT NULL DEFAULT '0',
   `ask_delete` tinyint(4) NOT NULL DEFAULT '0',
   `amount` float NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`,`BankID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,4 +116,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-17 12:43:30
+-- Dump completed on 2021-05-17 18:23:09

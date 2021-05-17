@@ -21,6 +21,17 @@ if (1 <= $id_in_db) {
     exit;
 }
 
+$stmt = $db->prepare("SELECT BankID FROM user WHERE BankID = '{$bankID}' AND user_id={$user_id}");
+$stmt->execute();
+$stmt->store_result();
+$BankID_in_db = $stmt->num_rows();
+$stmt->free_result();
+if (1 <= $BankID_in_db) {
+    header('Location: ./index.php?error=BankID_doesn\'t_exists');
+
+    exit;
+}
+
 $stmt = $db->prepare('INSERT INTO beneficiary(user_id,last_name,first_name,BankID)
 VALUES(?,?,?,?)');
 $stmt->bind_param('isss', $user_id, $last_name, $first_name, $bankID);
