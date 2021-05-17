@@ -12,3 +12,7 @@ $stmt = $db->prepare('INSERT INTO beneficiary(user_id,last_name,first_name,BankI
 VALUES(?,?,?,?)');
 $stmt->bind_param('isss', $user_id, $last_name, $first_name, $bankID);
 $stmt->execute();
+
+header('Location: ../User_connected/User_validated.php');
+
+exit;
