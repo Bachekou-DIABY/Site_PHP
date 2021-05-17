@@ -76,7 +76,7 @@
           <td scope="row"><?php echo $email; ?></td>
           <td scope="row"><?php echo $BankID; ?></td>
           <td scope="row">
-            <a href="../inscription/uploads/<?php echo $identity; ?>">Voir la pièce</a>
+            <a href="../Inscription/uploads/<?php echo $identity; ?>">Voir la pièce</a>
           </td>
           <td>
             <button class="btn btn-success" type="submit">
