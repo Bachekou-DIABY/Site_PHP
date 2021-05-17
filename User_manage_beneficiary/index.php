@@ -15,8 +15,10 @@
   <title>ECF-Banque</title>
 </head>
 <body>
-<?php
-  session_start();
+  <?php
+  if (!session_start()) {
+      session_start();
+  }
   $db = db_connect();
   $stmt = $db->prepare("SELECT user_id,first_name,last_name,BankID FROM beneficiary WHERE id='{$user_id}'");
   ?>
