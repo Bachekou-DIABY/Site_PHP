@@ -41,7 +41,7 @@ CREATE TABLE `banker` (
 
 LOCK TABLES `banker` WRITE;
 /*!40000 ALTER TABLE `banker` DISABLE KEYS */;
-INSERT INTO `banker` VALUES (1,'Dupont','Jean','dupont.jean@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',1),(2,'Dupont','Jeanne','dupont.jeanne@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',1),(3,'Dupont','Pierre','dupont.pierre@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',1),(4,'Dupont','Paul','dupont.paul@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',1),(5,'Dupont','Jacques','dupont.jacques@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',1);
+INSERT INTO `banker` VALUES (1,'Dupont','Jean','dupont.jean@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(2,'Dupont','Jeanne','dupont.jeanne@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(3,'Dupont','Pierre','dupont.pierre@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(4,'Dupont','Paul','dupont.paul@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0),(5,'Dupont','Jacques','dupont.jacques@gmail.com','$2y$10$OtevuZqH6PHC/hvCfYXY/eIrtefeKWYwYJUWMuHvrxNftJIRyPHbC',0);
 /*!40000 ALTER TABLE `banker` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,7 +100,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (4,'DIABY','Bachekou','2021-05-14','23 rue saint eusebe','bac.diaby@gmail.com','$2y$10$uCfB4F57DwUZ8OpgObt7suaY3kkFGDkqbNcE0DhbRojPcgL6nzPC.','REwz7dsuY9','Photo.png',0,0,0),(14,'DIABY','Bachekou','2021-05-07','23 rue saint eusebe','d@gmail.com','$2y$10$cBsBzY8s0oQ3S3GIXPF5S.ljEbmMWV27sFN76V0LdqVGHsVW3HFDO','0nGlKzbBI7','Photo.png',0,0,0),(24,'DIABY','Bachekou','2021-05-05','23 rue saint eusebe','bac13112000@gmail.com','$2y$10$dbVK3U2oebnM3thmY9RlQeIqKh9LXYvgrOAh3jupNDD48hkXE2.Zy','PEaRl4cnNp','Photo.png',0,0,0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -113,4 +112,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-17 12:35:26
+-- Dump completed on 2021-05-17 12:43:30
