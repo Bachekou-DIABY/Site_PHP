@@ -19,6 +19,9 @@
   if (!session_start()) {
       session_start();
   }
+
+  require_once '../Ressources/db.php';
+
   $db = db_connect();
   $stmt = $db->prepare("SELECT user_id,first_name,last_name,BankID FROM beneficiary WHERE id='{$user_id}'");
   ?>
