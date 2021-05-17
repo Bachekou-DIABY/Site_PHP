@@ -21,7 +21,7 @@ if (1 <= $id_in_db) {
     exit;
 }
 
-$stmt = $db->prepare("SELECT BankID FROM users WHERE BankID = '{$bankID}' AND user_id={$user_id}");
+$stmt = $db->prepare("SELECT BankID FROM users WHERE BankID = '{$bankID}'");
 $stmt->execute();
 $stmt->store_result();
 $BankID_in_db = $stmt->num_rows();
