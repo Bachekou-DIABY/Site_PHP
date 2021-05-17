@@ -37,7 +37,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav nav-justified w-100 ">
-            <?php if (0 == $first_connexion) { ?>
+            <?php if (0 == $_SESSION['first_connexion']) { ?>
               <a class="nav-link" href="../Admin_connexion/first_connexion.php">Retour</a>
             <?php } else {?>
               <a class="nav-link" href="../Admin_connexion/Admin_connected.php">Retour</a>
