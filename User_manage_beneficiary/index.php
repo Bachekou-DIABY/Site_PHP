@@ -17,7 +17,9 @@
 <body>
 <?php
   session_start();
-?>
+  $db = db_connect();
+  $stmt = $db->prepare("SELECT id,first_name,last_name,BankID FROM beneficiary WHERE id='{$user_id}'");
+  ?>
   <header class="container-fluid">
     <div class="row">
       <div class="col-4 logo"></div>
