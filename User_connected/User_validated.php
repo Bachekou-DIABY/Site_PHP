@@ -32,7 +32,14 @@
   <main class="container-fluid">
     <div class="row position d-block">
       <h1>Bienvenue sur votre page d'accueil</h1>
-      <?php echo '<p> Montant: '.$_SESSION['amount'].' €</p>'; ?>
+      
+      <?php $db = db_connect();
+      $email = $_SESSION['email'];
+      $stmt = $db->prepare("SELECT amount FROM users WHERE email = '{$email}'");
+      $stmt->execute();
+      $stmt->bind_result($amount);
+      $stmt->fetch();
+      echo '<p> Montant: '.$amount.' €</p>'; ?>
     </div>
   </main>
   <footer class="container-fluid">
