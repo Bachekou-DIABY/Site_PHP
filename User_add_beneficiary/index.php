@@ -71,6 +71,14 @@
           }
       }
       ?>
+            <?php
+      if (array_key_exists('error', $_GET)) {
+          if ('BankID_doesn\'t_exists' == $_GET['error']) {?>
+              <p class="error"> <br>L'identifiant bancaire saisi ne correspond a aucun utilisateur existant</p>
+          <?php
+          }
+      }
+      ?>
     </div>
   </main>
   <footer class="container-fluid">
