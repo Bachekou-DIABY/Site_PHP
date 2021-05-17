@@ -91,7 +91,14 @@
         </tbody>
       </table>
     </div>
-    
+    <?php
+      if (array_key_exists('error', $_GET)) {
+          if ('negative_amount' == $_GET['error']) {?>
+              <p class="error"> <br>Attention : Le montant du transfert ne peut etre negatif </p>
+          <?php
+          }
+      }
+    ?>
   </main>
   <footer class="container-fluid">
     <div class="row position">
