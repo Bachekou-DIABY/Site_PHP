@@ -63,6 +63,7 @@
             <th scope="col">Nom</th>
             <th scope="col">Prenom</th>
             <th scope="col">BankID</th>
+            <th scope="col">Montant du virement</th>
           </tr>
         </thead>
         <tbody>
@@ -73,9 +74,16 @@
             ?>
         <tr>
           <th scope="row"><?php echo $id; ?></th>
-          <td scope="row"><?php echo $first_name; ?></td>
-          <td scope="row"><?php echo $last_name; ?></td>
-          <td scope="row"><?php echo $BankID; ?></td>
+          <td ><?php echo $first_name; ?></td>
+          <td ><?php echo $last_name; ?></td>
+          <td ><?php echo $BankID; ?></td>
+          <td >
+            <form action="./wire.php" method="POST">
+              <input type="float" name="wire" placeholder="3.14"> €
+              <input type="hidden" name="BankID"  value="<?php echo $BankID; ?>">
+              <button class="btn btn-success" type="submit">Valider le virement</button>
+            </form>
+          </td>
         </tr>
         <?php
         }
