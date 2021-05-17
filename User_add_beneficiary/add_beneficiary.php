@@ -26,7 +26,7 @@ $stmt->execute();
 $stmt->store_result();
 $BankID_in_db = $stmt->num_rows();
 $stmt->free_result();
-if (1 <= $BankID_in_db) {
+if (1 != $BankID_in_db) {
     header('Location: ./index.php?error=BankID_doesn\'t_exists');
 
     exit;
