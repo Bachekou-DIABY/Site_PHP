@@ -10,7 +10,7 @@ $last_name = $_POST['last_name'];
 $first_name = $_POST['first_name'];
 $bankID = $_POST['BankID'];
 
-$stmt = $db->prepare("SELECT id FROM beneficiary WHERE id = '{$id}'");
+$stmt = $db->prepare("SELECT id FROM beneficiary WHERE BankID = '{$bankID}'");
 $stmt->execute();
 $stmt->store_result();
 $id_in_db = $stmt->num_rows();
