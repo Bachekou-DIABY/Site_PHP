@@ -63,6 +63,14 @@
       <button class="btn btn-info" type="submit">Valider l'inscription</button>
 
       </form>
+      <?php
+      if (array_key_exists('error', $_GET)) {
+          if ('id_exists' == $_GET['error']) {?>
+              <p class="error"> <br>Ce bénéficiaire a déja été ajouté</p>
+          <?php
+          }
+      }
+      ?>
     </div>
   </main>
   <footer class="container-fluid">
