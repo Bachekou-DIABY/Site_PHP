@@ -1,7 +1,9 @@
 <?php
 
 require_once '../Ressources/db.php';
-
+if (!session_start()) {
+    session_start();
+}
 $db = db_connect();
 $user_id = $_SESSION['id'];
 $last_name = $_POST['last_name'];

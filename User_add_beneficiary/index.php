@@ -17,7 +17,6 @@
 <body>
 <?php
   session_start();
-  var_dump($_SESSION['id']);
 ?>
   <header class="container-fluid">
     <div class="row">
