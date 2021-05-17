@@ -17,6 +17,7 @@
 <body>
   <?php
   session_start();
+  var_dump($first_connexion);
   ?>
   <header class="container-fluid">
     <div class="row">
