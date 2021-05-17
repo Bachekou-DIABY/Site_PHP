@@ -69,8 +69,8 @@
         while ($stmt->fetch()) {
             ?>
         <tr>
-          <td scope="row"><?php echo $first_name; ?></td>
           <td scope="row"><?php echo $last_name; ?></td>
+          <td scope="row"><?php echo $first_name; ?></td>
           <td scope="row"><?php echo $email; ?></td>
           <td scope="row"><?php echo $BankID; ?></td>
           <td scope="row">
@@ -98,6 +98,7 @@
             <th scope="col">Nom</th>
             <th scope="col">Prenom</th>
             <th scope="col">Email</th>
+            <th scope="col">Supprimer</th>
           </tr>
         </thead>
         <tbody>
@@ -108,8 +109,8 @@
         while ($stmt->fetch()) {
             ?>
         <tr>
-          <td scope="row"><?php echo $first_name; ?></td>
           <td scope="row"><?php echo $last_name; ?></td>
+          <td scope="row"><?php echo $first_name; ?></td>
           <td scope="row"><?php echo $email; ?></td>
           <td>
           <button class="btn btn-danger" type="submit">
