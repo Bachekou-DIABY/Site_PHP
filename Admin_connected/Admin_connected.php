@@ -16,6 +16,9 @@
 </head>
 <body>
   <?php
+
+  require_once '../Ressources/Check_session.php';
+
   if (!session_start()) {
       session_start();
   }
