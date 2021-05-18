@@ -55,8 +55,6 @@
     </div>
     <div class="row position">
       <?php
-      require_once '../Ressources/helpers.php';
-      check_admin_session();
       session_start();
       if (array_key_exists('error', $_GET)) {
           if ('password' == $_GET['error']) {
