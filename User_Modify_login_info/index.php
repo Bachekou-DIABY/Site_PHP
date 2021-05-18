@@ -17,9 +17,10 @@
 <body>
   <?php
   require_once '../Ressources/helpers.php';
-  check_user_session();
 
   session_start();
+  check_user_session();
+
   ?>
   <header class="container-fluid">
     <div class="row">

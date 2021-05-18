@@ -18,10 +18,10 @@
   <?php
 
   require_once '../Ressources/helpers.php';
-  check_admin_session();
   if (!session_start()) {
       session_start();
   }
+  check_admin_session();
 
   require_once '../Ressources/db.php';
   $db = db_connect();

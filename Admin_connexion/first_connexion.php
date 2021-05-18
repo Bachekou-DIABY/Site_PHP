@@ -18,9 +18,10 @@
   <?php
 
 require_once '../Ressources/helpers.php';
-check_admin_session();
 
   session_start();
+  check_admin_session();
+
   ?>
   <header class="container-fluid">
     <div class="row">

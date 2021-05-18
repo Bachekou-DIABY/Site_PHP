@@ -17,11 +17,12 @@
 <body>
   <?php
   require_once '../Ressources/helpers.php';
-  check_user_session();
 
   if (!session_start()) {
       session_start();
   }
+  check_user_session();
+
   $id = $_SESSION['id'];
 
   require_once '../Ressources/db.php';
