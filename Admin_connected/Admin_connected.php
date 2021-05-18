@@ -17,8 +17,8 @@
 <body>
   <?php
 
-  require_once '../Ressources/Check_session.php';
-  check_session($_SESSION);
+  require_once '../Ressources/helpers.php';
+  check_admin_session();
   if (!session_start()) {
       session_start();
   }

@@ -16,8 +16,8 @@
 </head>
 <body>
   <?php
-  require_once '../Ressources/Check_session.php';
-  check_session($_SESSION);
+  require_once '../Ressources/helpers.php';
+  check_user_session();
 
   session_start();
   ?>
