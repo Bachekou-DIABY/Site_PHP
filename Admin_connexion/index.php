@@ -56,7 +56,7 @@
     <div class="row position">
       <?php
       require_once '../Ressources/Check_session.php';
-      check_session();
+      check_session($_SESSION);
       session_start();
       if (array_key_exists('error', $_GET)) {
           if ('password' == $_GET['error']) {

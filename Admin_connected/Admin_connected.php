@@ -18,7 +18,7 @@
   <?php
 
   require_once '../Ressources/Check_session.php';
-  check_session();
+  check_session($_SESSION);
   if (!session_start()) {
       session_start();
   }

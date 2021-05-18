@@ -17,7 +17,7 @@
 <body>
   <?php
   require_once '../Ressources/Check_session.php';
-  check_session();
+  check_session($_SESSION);
   session_start();
   ?>
   <header class="container-fluid">
