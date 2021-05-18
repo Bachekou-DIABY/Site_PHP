@@ -17,6 +17,12 @@
 <body>
   <?php
 
+  require_once '../Ressources/helpers.php';
+  if (!session_start()) {
+      session_start();
+  }
+  check_admin_session();
+
   require_once '../Ressources/db.php';
   $db = db_connect();
   $stmt = $db->prepare('SELECT id,first_name,last_name,email,BankID,identity FROM users WHERE is_validated=0');

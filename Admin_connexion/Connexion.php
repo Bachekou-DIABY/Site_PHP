@@ -30,6 +30,7 @@
   $_SESSION['last_name'] = $last_name;
   $_SESSION['password'] = $password;
   $_SESSION['first_connexion'] = $first_connexion;
+  $_SESSION['type'] = 'admin';
 
   if (0 == $first_connexion) {
       header('Location: ../Admin_connexion/first_connexion.php');

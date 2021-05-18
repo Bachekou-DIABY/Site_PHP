@@ -33,6 +33,7 @@
   $_SESSION['ask_delete'] = $ask_delete;
   $_SESSION['is_validated'] = $is_validated;
   $_SESSION['amount'] = $amount;
+  $_SESSION['type'] = 'user';
 
   header('Location: ../User_connected/index.php');
 

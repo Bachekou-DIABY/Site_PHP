@@ -2,7 +2,7 @@
 
 function check_admin_session()
 {
-    if ($_SESSION['id'] > 5 || PHP_SESSION_NONE == session_status()) {
+    if ('admin' != $_SESSION['type']) {
         header('Location: ../Homepage/index.php');
 
         exit;
@@ -11,7 +11,7 @@ function check_admin_session()
 
 function check_user_session()
 {
-    if ($_SESSION['id'] < 5 || PHP_SESSION_NONE == session_status()) {
+    if ('user' != $_SESSION['type']) {
         header('Location: ../Homepage/index.php');
 
         exit;
