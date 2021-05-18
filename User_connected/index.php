@@ -16,6 +16,8 @@
 </head>
 <body>
   <?php
+  require_once '../Ressources/Check_session.php';
+
   session_start();
 
   require_once '../Ressources/db.php';
