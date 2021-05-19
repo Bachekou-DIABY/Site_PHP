@@ -51,7 +51,14 @@
           <?php
           }
       }
+      if (array_key_exists('error', $_GET)) {
+          if ('file' == $_GET['error']) {?>
+              <p class="error"> <br><?php echo $message; ?></p>
+          <?php
+          }
+      }
       ?>
+      
     <div>
     <div class="row position d-flex">
       <form method = "POST" action ="./inscription_success.php" enctype="multipart/form-data">
