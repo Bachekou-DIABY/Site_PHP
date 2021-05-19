@@ -141,7 +141,7 @@
         } catch (RuntimeException $e) {
             $message = $e->getMessage();
             if ('Upload réussi' != $message) {
-                header("Location: ./index.php?error=file&message={$message}");
+                header("Location: ./index.php?error=file&message='{$message}'");
 
                 exit;
             }
