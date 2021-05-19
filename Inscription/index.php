@@ -53,7 +53,7 @@
       }
       if (array_key_exists('error', $_GET)) {
           if ('file' == $_GET['error']) {?>
-              <p class="error"> <br><?php echo $message; ?></p>
+          <?php echo '<p><b>'.$message.'</p>'; ?>  
           <?php
           }
       }
